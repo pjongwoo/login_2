@@ -27,7 +27,7 @@ function getCurrentDate(){
 }
 
 router.get('/list', function(req, res, next){
-    boardVo.find(function(err, rows){
+    boardVo.find({flag:false},function(err, rows){
         if(err) return res.status(500).send({error: 'database failure'});
         res.render("mongo_list", {title: '게시판 리스트', rows: rows});
     });
@@ -64,7 +64,6 @@ router.get('/read/:id', function(req, res, next) {
 router.post('/update', function(req, res, next) {
     const id = req.body.id;
     var datas = new boardVo();
-    datas.name = req.body.name;
     datas.title = req.body.title;
     datas.content = req.body.content;
     datas.modidate = Date.now(); // 2
@@ -77,7 +76,6 @@ router.post('/update', function(req, res, next) {
             return;
         }
 
-        if(req.body.name) board.name = req.body.name;
         if(req.body.title) board.title = req.body.title;
         if(req.body.content) board.content = req.body.content;
         board.modidate = Date.now();
@@ -112,10 +110,8 @@ router.get('/page', function(req, res, next) {
 
 router.get('/page/:page', function(req, res, next) {
     var page = req.params.page;
-    var sql = "select idx, name, title, date_format(modidate,'%Y-%m-%d %H:%i:%s') modidate, "+
-        "date_format(regdate,'%Y-%m-%d %H:%i:%s') regdate, hit from nodedb.board";
 
-    boardVo.find(function(err, rows){
+    boardVo.find({flag:false},function(err, rows){
         if(err) return res.status(500).send({error: 'database failure'});
         res.render("mongo_page", {title: '게시판 리스트', rows: rows, page:page, length:rows.length-1, page_num:10, pass:true});
     });
