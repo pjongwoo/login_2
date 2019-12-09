@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link ref="stylesheet" href="/stylesheets/style.css"/>
+</head>
+<body>
+<h1><%= title %></h1>
+
+<form action="/mongo/update" method="post">
+    <input type="hidden" name="id" value="<%= row._id %>">
+    <table border="1">
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="name" id="name" value="<%= row.name %>" required/></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="title" id="title" value="<%= row.title %>" required/></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><textarea name="content" id="content" cols="30" rows="10" required><%= row.content %></textarea></td>
+        </tr>
+        <tr>
+            <td>패스워드</td>
+            <td><input type="text" name="passwd" id="passwd" required/></td>
+        </tr>
+        <tr>
+            <td>변경일</td>
+            <td><%= row.modidate %></td>
+        </tr>
+        <tr>
+            <td>등록일</td>
+            <td><%= row.regdate %></td>
+        </tr>
+        <tr>
+            <td>조회수</td>
+            <td><%= row.hit %></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">글 수정</button>
+                <button type="submit" formaction="/mongo/delete">글 삭제</button>
+                <a href="/mongo/page">목록</a>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>
