@@ -8,6 +8,7 @@ var dbConfig = require('./dbConfig/database');
 var router  = express.Router();
 var path = require('path');
 var boardMongoRouter = require('./routes/mongo_board');
+var boardAdminRouter = require('./routes/admin_board');
 var sampleRouter = require('./routes/sample');
 
 
@@ -31,6 +32,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/mongo',boardMongoRouter);
+app.use('/admin',boardAdminRouter);
 app.use('/sample', sampleRouter);
 
 // 세션값으로 페이지 이동

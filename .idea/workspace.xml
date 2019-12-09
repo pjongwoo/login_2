@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2e57126-8ba9-4473-95c1-3f5c5189a5ca" name="Default Changelist" comment="" />
+    <list default="true" id="c2e57126-8ba9-4473-95c1-3f5c5189a5ca" name="Default Changelist" comment="육군훈련소 소스 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/admin_board.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin_list.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin_page.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin_read.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin_write.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/board.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/mongo_board.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/mongo_board.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UhooIzbAxem2IYja5ZCvJREyW6" />
   <component name="ProjectViewState">
@@ -15,15 +31,33 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/router" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/sample_view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/views" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.ejs" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/login_2/views/main.ejs" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.main.ejs" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -48,10 +82,65 @@
       <option name="presentableId" value="Default" />
       <updated>1575818362153</updated>
       <workItem from="1575818364071" duration="582000" />
+      <workItem from="1575903567067" duration="2948000" />
+      <workItem from="1575907149729" duration="2564000" />
     </task>
+    <task id="LOCAL-00001" summary="글쓰기 수정">
+      <created>1575903668454</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575903668454</updated>
+    </task>
+    <task id="LOCAL-00002" summary="글쓰기 수정">
+      <created>1575904513678</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575904513678</updated>
+    </task>
+    <task id="LOCAL-00003" summary="육군훈련소 소스 추가">
+      <created>1575908416585</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575908416586</updated>
+    </task>
+    <task id="LOCAL-00004" summary="게시판 생성시 flag생성">
+      <created>1575909565405</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575909565406</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="글쓰기 수정" />
+    <MESSAGE value="육군훈련소 소스 추가" />
+    <MESSAGE value="게시판 생성시 flag생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="게시판 생성시 flag생성" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="190" key="#Notifications" timestamp="1575908677801">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="190" key="#Notifications/0.0.1680.1050@0.0.1680.1050" timestamp="1575908677801" />
+    <state x="434" y="127" key="CommitChangelistDialog2" timestamp="1575909564763">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="434" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1575909564763" />
+    <state x="688" y="445" key="Github.Dialog.Accounts.Choose" timestamp="1575908572907">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="688" y="445" key="Github.Dialog.Accounts.Choose/0.0.1680.1050@0.0.1680.1050" timestamp="1575908572907" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1575908913147">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1575908913147" />
   </component>
 </project>
