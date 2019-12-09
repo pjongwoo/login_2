@@ -34,7 +34,7 @@ router.get('/list', function(req, res, next){
 });
 
 router.get('/write', function(req, res, next) {
-    res.render('mongo_write', {title: "게시판 글 쓰기"});
+    res.render('mongo_write', {title: "게시판 글 쓰기", name:req.session.name});
 });
 
 router.post('/write', function(req, res, next) {
