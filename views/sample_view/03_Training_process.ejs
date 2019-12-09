@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/training_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+</head>
+<body>
+<!-- 헤더 부분-->
+<header id="header">
+     <%- include('header'); %>
+</header>
+
+<!--  현역/보충역 과정 안내 메인콘텐츠  -->
+<div class="train_div">
+   <div class="tr_head">
+    <h2>
+      <%if(type==1){%>
+        현역[5주과정]
+      <%}else{%>
+        보충역[4주과정]
+      <%}%>
+    </h2>
+    <h6>Welcome to Korea Army Training Center!</h6>
+   </div>
+   <div class="container" id="tr_body">
+
+     <!--  탭메뉴  -->
+      <div class="stepDiv">
+          <div class="active-line"></div>
+          <ul class="tabs">
+              <li>
+                <span class="roundSpan current" data-tab="step1">1<p></p><p>동화교육(3일)</p></span>
+              </li>
+               <li>
+                <span class="roundSpan" data-tab="step2">2<p>1주차~2주차<br>군인기본자세<br>확립</p></span>
+              </li>
+               <li>
+                <span class="roundSpan" data-tab="step3">3<p>3주차~5주차<br>기본전투기술<br>구비</p></span>
+              </li>
+               <li>
+                <span class="roundSpan" data-tab="step4">4<p></p><p>수료식&전속</p></span>
+              </li>
+          </ul>
+       </div>
+
+       <!--  탭메뉴에 의해 보여질 콘텐츠들(훈련과정)  -->
+      <div class="content">
+          <div id="step1" class="stepContent current">
+              <h5 class="title">동화교육(3일)</h5>
+              <ul>
+                  <li>
+                      <span class="bold">입영행사</span>: 민간인에서 군인으로 전환되는 최초의 행사로 정든 부모형제, 애인의 곁을 떠나 진정한 대한민국의 군인이 되겠다는 다짐을 하는 행사
+                  </li>
+                  <li>
+                      <span class="bold">개인물품지급</span>: 3D 자동 신체치수 측정 장비를 활용하여 개인별 신체치수를 확인하고 전투복, 전투화, 속옷, 체육복 등 개인 피복류를 지급하며 치약, 칫솔, 휴지 등 군 생활에 필요한 품목을 지급
+                  </li>
+                  <li>
+                      <span class="bold">신체검사</span>: 체중, 신장 등 기본적인 검사 외에 개인별 질환, 특이체질에 대한 정밀검사를 실시
+                  </li>
+                  <li>
+                      <span class="bold">특기적성검사</span>: 개인별 보유 특기에 대한 검사로 장차 특기병으로서의 임무수행이 가능한지 여부를 확인
+                  </li>
+              </ul>
+            </div>
+          <div id="step2" class="stepContent">
+              <h5 class="title">1주차~2주차 군인기본자세 확립</h5>
+              <ul>
+                  <li>
+                      <span class="bold">총기수여식</span>: 군인에게 가장 소중한 개인화기를 지급받는 시간으로 자신의 몸과 같이 아끼고 관리하겠다는 다짐의 시간
+                  </li>
+                  <li>
+                      <span class="bold">입소식</span>: 훈련병으로서 장차 5주간의 훈련을 성공적으로 마쳐 빛나는 이등병 계급장을 달기 위한 입소 행사
+                  </li>
+                  <li>
+                      <span class="bold">정신전력교육</span>: 군인정신, 국가관, 안보관 등 군인으로서 갖춰야할 기본적인 정신 자세를 배우는 시간으로 ‘내가 왜 여기에 있는가?’ 를 인식하는 시간
+                  </li>
+                  <li>
+                      <span class="bold">제식훈련</span>: 군인이 갖춰야 할 내·외적인 기본자세를 배우는 시간으로 걸음걸이, 경례요령, 군대예절을 익혀 군인다워지는 훈련
+                  </li>
+              </ul>
+          </div>
+          <div id="step3" class="stepContent">
+          <h5 class="title">3주차~5주차 기본전투기술 구비</h5>
+              <ul>
+                  <li>
+                      <span class="bold">소총의 조작 및 관리</span>: 개인화기의 특성을 익히고 조작 및 관리 요령에 대해서 숙달하는 훈련
+                  </li>
+                  <li>
+                      <span class="bold">사격술 훈련</span>: 사격을 하기 전에 자세, 조준, 격발은 어떻게 하고, 주의할 사항은 무엇인지를 배움
+                  </li>
+                  <li>
+                      <span class="bold">경계</span>: 군인의 기본인 수하요령과 관측 / 보고요령에 대해서 교육
+                  </li>
+                  <li>
+                      <span class="bold">구급법</span>: 전장에서 다친 전우를 구하기 위한 기본적인 응급처치 기술을 습득하는 훈련으로 전역후에도 가족과 애인이 위급할 때 생명을 구할수 있는 유용한 훈련
+                  </li>
+                  <li>
+                      <span class="bold">화생방</span>: 적의 화학, 생물학, 핵 공격에 대비하여 자신을 보호하고 지속적인 임무수행을위한 능력을 갖추기 위한 훈련으로 방독면 착용, 가스실습 등을 훈련
+                  </li>
+                  <li>
+                      <span class="bold">수류탄</span>: 수류탄의 특성과 제원을 숙지하고 사용요령을 숙달하여 전투에서 적을 효과적으로 제압할 수 있는 능력 구비
+                  </li>
+                  <li>
+                      <span class="bold">영점 사격</span>: 일정한 사거리에서 조준점과 탄착점을 일치시키기 위한 사격훈련
+                  </li>
+                  <li>
+                      <span class="bold">기록 사격</span>: 사거리별 표적을 명중시킬 수 있는 원리를 이해하고 숙달하기 위한 훈련
+                  </li>
+                  <li>
+                      <span class="bold">각개전투</span>: 방향유지, 다양한 지형지물을 이용한 주 ∙ 야간 이동하는 기술과 각종 장애물을 극복하고 적의 진지를 탈취하기 위한 절차를 숙달하는 훈련으로 훈련소에서 배운 모든 전투기술이 망라되어 있음
+                  </li>
+                  <li>
+                      <span class="bold">완전군장행군</span>: 전장상황에서 발생하는 다양한 상황을 극복할 수 있는 전투체력을 구비하기 위해 20kg 완전군장으로 훈련소 주변 20km를 행군하는 훈련
+                  </li>
+              </ul>
+          </div>
+          <div id="step4" class="stepContent">
+              <h5 class="title">수료식&전속</h5>
+              <ul>
+                  <li>
+                      <span class="bold">수료식</span>: 5주간의 훈련을 마치고 빛나는 이등병 계급장을 부착하는 시간으로 수료식 후에는 부모님과 함께 영외로 면회외출을 실시
+                  </li>
+                  <li>
+                      <span class="bold">전속</span>: 정들었던 훈련소를 떠나 각자 배정된 부대(또는 병과학교)로 이동
+                  </li>
+              </ul>
+          </div>
+      </div>
+   </div>
+</div>
+
+
+<!-- footer부분  -->
+<footer class="footer_div">
+    <%- include('footer'); %>
+</footer>
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script>
+    $(function() {
+         //탭메뉴 선택 시 보여지는 데이터 변경시키기
+         $('.roundSpan').click(function(){
+            var tab_id = $(this).attr('data-tab');
+
+            $('.roundSpan').removeClass('current');
+            $('.stepContent').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+          })
+    });
+
+</script>
+</body>
+</html>

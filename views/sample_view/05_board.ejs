@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연대별 게시판</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/board_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- 헤더 부분-->
+    <header id="header">
+        <%- include('header'); %>
+    </header>
+
+    <!-- 연대 게시판 div -->
+    <div class="board_div">
+        <div class="board_head">
+            <h2>연대 
+		<% category = sub.substring(2,sub.length);
+		   if(category == 'notice'){%>공지사항
+		<%}else if(category =='free'){%>자유게시판
+		<%}else if(category =='picture'){%>훈련병 사진
+		<%}else {%>Q&A<%}%>
+
+	    </h2>
+            <h6>Welcome to Korea Army Training Center!</h6> </div>
+
+        <!--    검색버튼    -->
+        <div class="board_form">
+            <form class="form-inline my-2 my-lg-0" action="/boards/search" method="get" name="searchAction">
+                <input class="form-control mr-sm-2 form-control-sm" id="searchForm" name="searchWord">
+                <input type ="hidden" name="sub" value="<%=sub%>">
+                <button class="btn btn-outline-primary btn-sm" type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- 게시글 목록 -->
+        <div class="board_table_div">
+            <table class="table table-sm table-hover" id="boardTable">
+                <thead class="thead">
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>날짜</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <%if(contents.length>0){%>
+                  <%var i = 0;%>
+                  <%contents.forEach(function(item){%>
+                  <%i++;%>
+                  <tr>
+                    <td scope="col">
+                      <%=i%>
+                    </td>
+                    <td class="boardTitle">
+                      <a href="/boards/view?id=<%=item._id%>&sub=<%=item.category%>"><%=item.title%></a>
+                    </td>
+                    <td class="writer">
+                      <%=item.writer%>
+                    </td>
+                    <td class="date">
+                      <%=getFormatDate(item.date)%>
+                    </td>
+                    <td class="cnt">
+                      <%=item.count%>
+                    </td>
+                  </tr>
+                  <%})%>
+                  <%} else {%>
+                  <tr>
+                    <td colspan="5" style="text-align:center">게시물이 없습니다.</td>
+                  </tr>
+                  <%}%>
+                </tbody>
+            </table>
+
+            <!-- 페이지네이션 -->
+            <%if(session.user){ %>
+            <a id="writeBtn" class="btn btn-primary" href="/boards/addBoard?sub=<%=sub%>">작성하기</a>
+            <%}%>
+            <div class="text-center">
+                <ul class="pagination pagination-sm justify-content-center">
+                    <%if(startpage > 10 ){%>
+                      <li class="page-item">
+                          <a class="page-link" href="/boards?sub=<%=sub%>&page=<%=startpage-10%>" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </a>
+                      </li>
+                  	<%}%>
+                  	<%for(var i=startpage; i<=endpage; i++){%>
+                  	  <li><a href="/boards?sub=<%=sub%>&page=<%=i%>" class="page-link"><%=i%></a></li>
+                  	<%}%>
+                  	<%if(endpage < pageNum ){%>
+                      <li class="page-item">
+                          <a class="page-link" href="/boards?sub=<%=sub%>&page=<%=startpage+10%>" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </a>
+                      </li>
+                  	<%}%>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <%
+    function getFormatDate(date){
+    	var year = date.getFullYear();								//yyyy
+    	var month = (1 + date.getMonth());						//M
+    	month = month >= 10 ? month : '0' + month;		// month 두자리로 저장
+    	var day = date.getDate();											//d
+    	day = day >= 10 ? day : '0' + day;						//day 두자리로 저장
+    	return  year + '-' + month + '-' + day;
+    }
+    %>
+</body>
+
+</html>

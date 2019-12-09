@@ -1,0 +1,263 @@
+#header {
+    background: url("../img/03main.PNG") no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 30px;
+    height: auto;
+}
+
+/*--------------train_div--------------*/
+.train_div {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.train_div .tr_head {
+    width: 100%;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+
+
+/*--------------훈련정보 - 신병교육 안내--------------*/
+
+
+/*차트 스타일*/
+#donutchart {
+    max-width: 100%;
+    width: 900px;
+    height: 500px;
+    margin: -30px auto;
+    text-align: center;
+}
+
+.classInform {
+    width: 100%;
+    margin: 30px auto;
+}
+
+.cls {
+    width: 180px;
+    height: 220px;
+    padding: 15px;
+    margin: 10px;
+    border: solid 1px #ccc;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.cls_title {
+    color: darkblue;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+}
+
+
+/*--------------훈련정보 - 시설안내--------------*/
+
+.slider div {
+    position: relative;
+    margin: auto 5px;
+}
+
+.slider img {
+    width: 100%;
+    height: 300px;
+}
+
+.table {
+    margin: 80px auto;
+}
+
+/*테이블 제목 부분 굵게*/
+.table td:nth-child(1) {
+    font-weight: bold;
+}
+
+/*이미지 위에 설명글*/
+.faInfrom {
+    font-family: 'Noto Sans KR', sans-serif;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    right: 20px;
+    bottom: 10px;
+}
+
+
+/*--------------훈련정보 - 현역/보충역 과정안내--------------*/
+
+#tr_body {
+    width: 100%;
+    text-align: center;
+    background: #f1f1f1;
+    padding: 30px;
+    margin: 50px auto;
+}
+
+.stepDiv {
+    position: relative;
+}
+
+.stepDiv ul>li {
+    display: inline-block;
+}
+
+/*탭메뉴 모양*/
+span.roundSpan {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: #CCC;
+    border: 2px solid #fff;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+    margin: auto 20px;
+    padding: 0;
+}
+
+/*선택 된 탭메뉴*/
+.roundSpan.current {
+    background: #003399;
+    transform: scale(1.1);
+}
+
+.roundSpan p {
+    margin-top: 6px;
+}
+
+/*탭메뉴 뒤에 선(z-index로 뒤로가게)*/
+.active-line {
+    height: 15px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 99.5%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 44%;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.content {
+    padding-top: 15px;
+    border-top: 1px solid #fff;
+    margin-top: 50px;
+}
+
+/*선택되지 않은 콘텐츠는 안보이게*/
+.stepContent {
+    display: none;
+}
+
+/*선택된 콘텐츠 보여지게*/
+.stepContent.current {
+    display: inherit;
+}
+
+.stepContent ul>li {
+    font-size: 14px;
+    text-align: left;
+    margin: 20px auto;
+}
+
+.stepContent .bold {
+    font-weight: bold;
+}
+
+
+/*--------------반응형--------------*/
+@media( max-width: 768px) {
+    /*탭메뉴 간격 줄이기*/
+    .tabs {
+        text-align: center;
+        padding-right: 20px;
+    }
+    /*탭메뉴 사이즈 전체적으로 축소*/
+    span.roundSpan {
+        width: 80px;
+        height: 80px;
+        font-size: 13px;
+        margin: 0px 1px;
+        padding: 0;
+    }
+    .roundSpan p {
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .active-line {
+        height: 10px;
+    }
+    .content {
+        padding-top: 15px;
+        border-top: 1px solid #fff;
+        margin-top: 20px;
+    }
+}
+
+@media( max-width: 480px) {
+    /*차트 margin-top줄이기*/
+    #donutchart {
+        margin: -80px auto;
+    }
+    
+    /*탭메뉴 간격 줄이기*/
+    .tabs {
+        text-align: center;
+        padding-right: 20px;
+    }
+    
+    /*탭메뉴 사이즈 전체적으로 축소*/
+    span.roundSpan {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        font-size: 20px;
+        margin: 0px 0px;
+        padding: 0;
+    }
+    
+    /*탭메뉴 자세한 내용 안보이게하기(숫자만 남김)*/
+    .roundSpan p {
+        display: none;
+    }
+    .active-line {
+        height: 5px;
+    }
+    .content {
+        padding-top: 15px;
+        border-top: 1px solid #fff;
+        margin-top: 10px;
+    }
+    
+    /*시설안내 테이블 세로정렬로 변경*/
+    .table {
+        font-size: 13px;
+    }
+    .table tr,
+    .table td {
+        display: block;
+    }
+    .table tr>td {
+        border: none;
+    }
+    .table tr {
+        border-top: solid 1px #ccc;
+        margin: auto 10px;
+    }
+}

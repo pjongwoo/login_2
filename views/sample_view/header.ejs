@@ -1,0 +1,84 @@
+<div id="header_div">
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+            <!-- 로고 -->
+            <a class="navbar-brand" href="/"><img src="/public/img/logo_white.png" alt="로고"></a>
+            <!-- 화면이 줄었을 때 나올 메뉴 버튼 -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 메뉴 -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">  <!-- 드롭다운 메뉴 -->
+                        <a class="nav-link" href="#" data-toggle="dropdown">부대소개</a>
+                        <div class="dropdown-menu ">
+                        <a class="dropdown-item" href="/01_introduce">훈련소 소개</a>
+                        <a class="dropdown-item" href="/01_introduce?sub=map">오시는 길</a>
+                        <a class="dropdown-item" href="/01_introduce">공지사항</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">  <!-- 드롭다운 메뉴 -->
+                       <a class="nav-link" href="#" data-toggle="dropdown">입영/수료</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/02_AdoptComplete">입영 준비</a>
+                        <a class="dropdown-item" href="/02_AdoptComplete?sub=event">입영/수료 행사</a>
+                        <a class="dropdown-item" href="#">병과 소개</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">  <!-- 드롭다운 메뉴 -->
+                        <a class="nav-link" href="#" data-toggle="dropdown">훈련정보</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/03_Training">신병교육안내</a>
+                        <a class="dropdown-item" href="/03_Training?sub=process&type=1">현역</a>
+                        <a class="dropdown-item" href="/03_Training?sub=process&type=2">보충역</a>
+                        <a class="dropdown-item" href="/03_Training?sub=facility">시설안내</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">  <!-- 드롭다운 메뉴 -->
+                        <a class="nav-link" href="#" data-toggle="dropdown">가족/지인</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/04_family">내 자녀 찾기</a>
+                        <a class="dropdown-item" href="/04_family?sub=letter">편지 쓰기</a>
+                        <a class="dropdown-item" href="/04_family?sub=qna">Q&A</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">  <!-- 드롭다운 메뉴 -->
+                        <a class="nav-link" href="#" data-toggle="dropdown">연대별 게시판</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="/boards?sub=23notice">23연대</a>
+                          <a class="dropdown-item" href="/boards?sub=25notice">25연대</a>
+                          <a class="dropdown-item" href="/boards?sub=26notice">26연대</a>
+                          <a class="dropdown-item" href="/boards?sub=27notice">27연대</a>
+                          <a class="dropdown-item" href="/boards?sub=28notice">28연대</a>
+                          <a class="dropdown-item" href="/boards?sub=29notice">29연대</a>
+                          <a class="dropdown-item" href="/boards?sub=30notice">30연대</a>
+                          <a class="dropdown-item" href="/boards?sub=31notice">31연대</a>
+                        </div>
+                    </li>
+                    <% if(session.user) { %>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"><%= session.user.name %> 님</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/logout">로그아웃</a>
+                        </li>
+                    <% } else{ %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">로그인</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">회원가입</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="headerContent">
+        <h1>육군훈련소</h1>
+        <p>"대한민국 최고"의 신병 교육기관 </p>
+        <div class="btn btn-primary"><a href="/01_introduce">Learn more about us</a></div>
+    </div>
+</div>

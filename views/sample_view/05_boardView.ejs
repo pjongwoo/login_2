@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연대별 게시판</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/board_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- 헤더 부분-->
+    <header id="header">
+        <%- include('header'); %>
+    </header>
+
+    <!-- 연대 게시판 div -->
+    <div class="add_div">
+        <form action="" class="viewform">
+            <table>
+               <tr>
+                   <td id="viewtd">제목</td>
+                   <td id="view_title" colspan="2"><%=content.title%></td>
+
+               </tr>
+               <tr>
+                   <td id="viewtd">작성자</td>
+                   <td><%=content.writer%></td>
+                   <td id="view_date"><%=getFormatDate(content.date)%></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <div  id="view_contents" ><%=content.contents%></div>
+                  </td>
+               </tr>
+               <tr>
+                   <td colspan="3">
+                      <a href="/boards?sub=<%=sub%>" class="btn btn-outline-primary btn-sm viewbtn" >확인</a>
+                      <%if(session.user.id == content.writer){%>
+                      <a href="/boards/delete?id=<%=content._id%>&sub=<%=sub%>" class="btn btn-outline-primary btn-sm viewbtn" >삭제</a>
+                      <a href="/boards/modifyBoard?id=<%=content._id%>&sub=<%=sub%>" class="btn btn-outline-primary btn-sm viewbtn" >수정</a>
+                      <%}%>
+                   </td>
+               </tr>
+           </table>
+        </form>
+    </div>
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="<%- include('header'); %>/js/bootstrap.js"></script>
+</body>
+</html>
+<%
+function getFormatDate(date){
+  var year = date.getFullYear();								//yyyy
+  var month = (1 + date.getMonth());						//M
+  month = month >= 10 ? month : '0' + month;		// month 두자리로 저장
+  var day = date.getDate();											//d
+  day = day >= 10 ? day : '0' + day;						//day 두자리로 저장
+  return  year + '-' + month + '-' + day;
+}
+%>

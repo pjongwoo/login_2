@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연대별 게시판</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/board_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- 헤더 부분-->
+    <header id="header">
+      <%- include('header'); %>
+    </header>
+
+    <!-- 연대 게시판 div -->
+    <div class="add_div">
+        <form method="post" action="/boards/modify" class="addform">
+            <table>
+               <tr>
+                   <td id="bd_title">제목</td>
+                   <td><input type="text" name="title" value=<%=modify.title%>></td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                      <textarea class="tarea" rows="12" name="contents"><%=modify.contents%></textarea>
+                  </td>
+               </tr>
+               <tr>
+                   <td colspan="2">
+                       <input class="btn btn-primary btn-sm" id="addbtn" type="submit" value="수정">
+                       <input type="hidden" id="modId" name="modId" value="<%=modify._id%>">
+                   		 <input type="hidden" id="sub" name="sub" value="<%=sub%>">
+                   </td>
+               </tr>
+           </table>
+        </form>
+    </div>
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+</body>
+
+</html>

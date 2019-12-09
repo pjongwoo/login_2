@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/intro_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+         <%- include('header'); %>
+    </header>
+
+    <!--  오시는길 메인 콘텐츠  -->
+    <div class="intro_div">
+       <div class="mapInform">
+        <div class="intro_head">
+            <h2>훈련소 위치</h2>
+            <h6>Welcome to Korea Army Training Center!</h6>
+        </div>
+
+        <img src="/img/map.gif" alt="훈련소지도" id="mapImg">
+        <!--화면이 작아졌을 때 지도를 크게보기 위한 버튼-->
+        <button class="btn btn-outline-primary btn-sm" type="submit">크게보기</button>
+
+        <h5>- 주소 : 충남 논산시 연무읍 득안대로 육군훈련소 입영심사대(입소대대)</h5>
+        <h5>- 네비게이션 : 입영심사대 또는 충남 논산 연무읍 황화정리 971-38</h5>
+        <h5>- ARS안내 : 041-740-7750~1 (1.훈련병문의 2.민원안내)</h5>
+
+        <!--교통방법 설명-->
+        <div>
+            <h4>대중교통 이용방법</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <td rowspan="2" class="titleTd">자가차량</td>
+                    <td class="contentTd">논산/천안(고) > 연무IC > 1번국도 > 입영심사대</td>
+                </tr>
+                <tr>
+                    <td class="contentTd">중부(고) > 논산IC > 1번국도 > 입영심사대</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="titleTd">지하철</td>
+                    <td class="contentTd">호남선 > 논산역하차 > 시내버스 201.202번 > 입영심사대</td>
+                </tr>
+                <tr>
+                    <td class="contentTd">경부선 > 대전역하차 > 동부시외버스터미널 > 연무읍(연무터미널) > 시내버스 201.202번 > 입영심사대</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+
+</html>

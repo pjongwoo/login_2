@@ -8,6 +8,8 @@ var dbConfig = require('./dbConfig/database');
 var router  = express.Router();
 var path = require('path');
 var boardMongoRouter = require('./routes/mongo_board');
+var sampleRouter = require('./routes/sample');
+
 
 //express 생성
 var app = express();
@@ -29,6 +31,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/mongo',boardMongoRouter);
+app.use('/sample', sampleRouter);
 
 // 세션값으로 페이지 이동
 app.get('/', function (req, res) {

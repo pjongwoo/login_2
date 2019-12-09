@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/user_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+</head>
+
+<body>
+    <div class="blur background">
+    <!-- 헤더 부분-->
+    <header id="header">
+        <%- include('header'); %>
+    </header>
+
+    <!--  로그인 div /post방식으로 바꾸고 action이랑 name은 너가 편한대로! -->
+    <div class="login_div">
+        <form method="post" action="/process/Login" class="loginform">
+            <input type="text" placeholder="아이디" name="id"><br>
+            <input type="password" placeholder="비밀번호" name="passwords"><br>
+            <input type="submit" name="" value="로그인" class="btn btn-primary btn-sm">
+        </form>
+  </div>
+  </div>
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/jquery.timelinr-0.9.7.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</body>
+
+</html>

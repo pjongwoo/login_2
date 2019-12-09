@@ -1,0 +1,169 @@
+#header {
+    background: url("../img/04main.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 30px;
+    height: auto;
+}
+
+
+/*--------------family_div--------------*/
+
+.family_div {
+    padding: 30px 50px;
+}
+
+.family_div .fa_head {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 20px;
+}
+
+.family_div .notice {
+    border: solid 1px #ccc;
+    padding: 15px;
+}
+
+.notice p::before {
+    content: "- ";
+}
+
+.notice {
+    margin-bottom: 20px;
+}
+
+
+/*--------------훈련병찾기/편지쓰기 검색 form--------------*/
+
+.findArmy h6 {
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.findArmy .form-control {
+    margin: auto 15px 5px 5px;
+}
+
+.family_div #writeBtn {
+    float: right;
+    margin-bottom: 20px;
+}
+
+
+/*테이블 스타일*/
+#searchTable {
+    margin-top: 20px;
+}
+
+#searchTable td {
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+/*--------------Q&A--------------*/
+
+.family_div .fa_head_qna {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.family_div .board_form {
+    padding-top: 30px;
+    float: right;
+}
+
+.board_table_div {
+    margin: 20px 0px;
+}
+
+.pagination {
+    clear: both;
+}
+
+
+/*--------------반응형--------------*/
+
+@media( max-width: 768px) {
+    .family_div .board_form {
+        padding-top: 0px;
+    }
+    /*검색버튼 작게*/
+    #searchForm {
+        width: 100px;
+        margin-right: 5px;
+    }
+    /*테이블 글꼴 작게*/
+    #boardTable {
+        font-size: 13px;
+    }
+}
+
+@media( max-width: 480px) {
+    /*전체적인 사이즈(글꼴,마진) 작게*/
+    .notice {
+        font-size: 13px;
+    }
+    .findArmy .form-control {
+        margin: 5px auto;
+        margin-left: 0px;
+    }
+    #searchTable {
+        font-size: 13px;
+    }
+    .family_div #writeBtn {
+        font-size: 13px;
+    }
+    #searchForm {
+        width: 100px;
+        margin-right: 5px;
+    }
+    .family_div .board_form {
+        padding-top: 0px;
+    }
+    #boardTable {
+        font-size: 13px;
+    }
+    
+    /*게시판 테이블 세로정렬로 변경*/
+    /*작성자, 작성일, 조회수 한줄에 보이게*/
+    #boardTable tr,
+    #boardTable td:nth-child(2) {
+        display: block;
+        width: auto;
+    }
+    #boardTable td:nth-child(2) {
+        font-weight: bold;
+    }
+    #boardTable td:nth-child(3)::after,
+    #boardTable td:nth-child(4)::after {
+        content: " / ";
+    }
+    #boardTable tbody tr {
+        border-top: 1px solid #ccc;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    #boardTable tbody th {
+        display: none;
+    }
+    #boardTable td,
+    #boardTable th {
+        border: none;
+    }
+    
+    /*기존 테이블헤드 안보이게*/
+    #boardTable thead th {
+        display: none;
+    }
+    
+    /*'제목'타이틀만 보이게*/
+    #boardTable thead th:nth-child(2) {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/ac_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet"> </head>
+
+<body>
+    <!-- 헤더 부분-->
+    <header id="header">
+         <%- include('header'); %>
+    </header>
+
+    <!-- 입영준비 메인 콘텐츠-->
+    <div class="ac_div">
+        <div class="ac_head">
+            <h2>입영 준비</h2>
+            <h6>Welcome to Korea Army Training Center!</h6> </div>
+
+        <!--   필수품목 설명(fadeinbottom효과)    -->
+        <h5 class="title"> 필수 품목</h5>
+        <div class="parts fadeinbottom">
+            <div class="box">
+               <img src="/img/nasaca.png" alt="나라사랑카드">
+               <p>1) 나라사랑카드 <br><span>- 훈련기간 중 급여지급</span></p>
+            </div>
+            <div class="box">
+               <img src="/img/identification.PNG" alt="신분증">
+               <p>2) 신분증 <br><span>- 주민등록증, 운전면허증, 여권</span></p>
+            </div>
+            <div class="box">
+               <img src="/img/tongzi.PNG" alt="입영통지서">
+               <p>3) 입영통지서 <br><span>- 분실자 신분증으로 대체가능</span></p>
+            </div>
+
+            <div class="addInform">
+                <p>+ 기술자격 및 면허증과 경력증명서 사본 | 질병 입증서류 | 국외영주권.시민권자는 증명서류
+                <br>+ 지참가능품목 : 의약품(입대전부터 복용) , 안경 및 벗겨짐 방지 고무줄(렌즈 제한), 화장품(튜브,플라스틱 형)</p>
+            </div>
+        </div>
+
+        <!--   지참불가품목 (fadeinbottom효과)    -->
+        <h5 class="title"> 지참불가품목</h5>
+        <div class="parts fadeinbottom">
+            <div class="box">
+               <img src="/img/phone.PNG" alt="나라사랑카드">
+               <p>무선 이동통신 기기 <br><span>- 핸드폰 등</span></p>
+            </div>
+            <div class="box">
+               <img src="/img/camera.PNG" alt="신분증">
+               <p>귀중품 및 전자제품 <br><span>- 카메라, MP3, 목걸이/반지 등 악세서리</span></p>
+            </div>
+            <div class="box">
+               <img src="/img/medicine.PNG" alt="입영통지서">
+               <p>의약품,담배,음식물,라이타 등</p>
+            </div>
+            <div class="box">
+               <img src="/img/money.PNG" alt="입영통지서">
+               <p>현금 <br><span>- 병급여에서 지급</span></p>
+            </div>
+            <div class="addInform">
+                <p>+ 유의사항 : 군생활에 필요한 물품은 입영부대에서 지급합니다.
+                <br>부대주변 또는 인터넷 상에서 판매하는 물품들은 구입 할 필요가 없습니다.</p>
+            </div>
+        </div>
+
+        <!--   두발규정(fadeinbottom효과)    -->
+        <h5 class="title"> 두발 규정</h5>
+        <div class="hair fadeinbottom">
+           <img src="/img/hair1.PNG" alt=""><img src="/img/hair2.PNG" alt="">
+           <p> 3Cm이하의 스포츠형으로 이발을 하고 입영해야 합니다.
+           <br/> 이발 미실시자는 입영 후 벌점 부여 등 불이익이 발생할 수 있으니 규정대로 이발을 하고 입영하기 바랍니다.
+           </p>
+        </div>
+    </div>
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+       <%- include('footer'); %>
+    </footer>
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+        $(function () {
+            //fadein 이벤트
+            //각 hideme 엘리먼트 위치 파악
+            //모습이 50%이상 보이면 불투명도를 1로 서서히 변경
+            $('.hideme').each(function (i) {
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                if (bottom_of_window > bottom_of_object / 2) {
+                    $(this).animate({
+                        'opacity': '1'
+                    }, 500);
+                }
+            });
+        });
+
+        $(window).scroll(function () {
+            //스크롤이벤트 발생 시
+            //각 fadeinbottom 엘리먼트 위치 파악
+            //모습이 50%이상 보이면 불투명도 1, 마진 0으로 서서히 변경
+            $('.fadeinbottom').each(function (i) {
+                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                if (bottom_of_window > bottom_of_element / 2) {
+                    $(this).animate({
+                        'opacity': '1'
+                        , 'margin-top': '0px'
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

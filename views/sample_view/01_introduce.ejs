@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/intro_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+         <%- include('header'); %>
+    </header>
+
+    <!--  부대소개 메인 콘텐츠  -->
+    <div class="intro_div">
+        <!-- 인삿말 -->
+        <div class="intro_hello hideme">
+            <h2>" 정병육성의 요람인 육군훈련소 홈페이지를</h2>
+            <h2>찾아주신 국민 여러분들을 진심으로 환영합니다. "</h2>
+        </div>
+
+        <!-- 부대상징 소개 (마크설명,상징건물) -->
+        <div class="mark_div fadeinbottom">
+            <h4 class="title">훈련소 상징</h4>
+            <img src="/img/nonsanMark.PNG" alt="논산훈련소마크">
+            <p> 방패 : 조국 대한민국을 수호하는 정예신병 육성
+                <br> 칼 : 자유와 평화를 수호하는 정의의 칼
+                <br> 3개의 별 : 통일 , 충성 , 사랑
+                <br> 화살표 : 교육 훈련을 통한 기초군사 지식 습득
+                <br> 청색 : 자유민주주의 평화를 상징 / 흰색 : 백의 민족을 상징
+            </p>
+
+            <div class="symbol_div">
+                <div class="box">
+                   <img src="/img/symbol1.PNG" alt="상호존중과 배려 기념탑">
+                   <h4>상호존중과<br>배려기념탑</h4> </div>
+                <div class="box">
+                   <img src="/img/symbol2.PNG" alt="멸공상">
+                   <h4>멸공상</h4> </div>
+                <div class="box">
+                   <img src="/img/symbol3.PNG" alt="국토수호충성탑">
+                   <h4>국토수호<br>충성탑</h4> </div>
+                <div class="box">
+                   <img src="/img/symbol4.PNG" alt="연무상">
+                   <h4>연무상</h4> </div>
+            </div>
+            <div class="symbol_div">
+                <div class="box">
+                   <img src="/img/symbol5.PNG" alt="연무문">
+                   <h4>연무문</h4> </div>
+                <div class="box">
+                   <img src="/img/symbol6.PNG" alt="통일탑">
+                   <h4>통일탑</h4> </div>
+                <div class="box">
+                   <img src="/img/symbol7.PNG" alt="무명용사상">
+                   <h4>무명<br>용사상</h4> </div>
+                <div class="box">
+                   <img src="/img/symbol8.PNG" alt="총알탑">
+                   <h4>총알탑</h4> </div>
+            </div>
+        </div>
+
+        <!-- 부대군가 소개 -->
+        <div class="song_div">
+            <h4 class="title">훈련소 군가</h4>
+            <div>
+                <h5>1절</h5>백제의 옛 터전에 계백의 정기 맑고 관창의 어린 넋이 지하에 혼연하니 웅장한 황산벌에 연무대 높이섰고 대한의 건아들이 서로 모인 이곳이 오 젊은이의 자랑 육군훈련소 </div>
+            <div>
+                <h5>2절</h5>창생의 독립사를 금강물에 엮으며 대둔산 굳은 기개 수파람이 어디냐 끓는피 억누르고 정의의 칼을 갈아 겨례가 가는 길에 넋이라도 바치리 오 이 나라의 초석 육군훈련소 </div>
+        </div>
+
+        <!-- 부대연혁 소개 -->
+        <div class="history_div">
+            <h4 class="title">훈련소 연혁 </h4>
+            <div>
+                <div id="timeline">
+                    <!--  타임라인에 표시될 데이터들 (1950~2018)-->
+                    <ul id="dates">
+                        <li><a href="#1950">1950</a></li>
+                        <li><a href="#1960">1960</a></li>
+                        <li><a href="#1970">1970</a></li>
+                        <li><a href="#1980">1980</a></li>
+                        <li><a href="#1990">1990</a></li>
+                        <li><a href="#2000">2000</a></li>
+                        <li><a href="#2010">2010</a></li>
+                        <li><a href="#2018">2018</a></li>
+                    </ul>
+
+                    <!--  타임라인에 의해 슬라이드 될 데이터들  -->
+                    <ul id="issues">
+                        <li id="1950"> <img src="/img/1950.jpg" width="256" height="256" />
+                            <h1>1950</h1>
+                            <table id="historyTable">
+                                <tr>
+                                    <td>1951. 11. 01.</td>
+                                    <td>'제2훈련소' 창설</td>
+                                </tr>
+                                <tr>
+                                    <td>1951. 12 ~ 1952. 05.</td>
+                                    <td>9개 교육연대 창설 (21 ~ 30교육연대)</td>
+                                </tr>
+                                <tr>
+                                    <td>1953. 10.</td>
+                                    <td>훈련병 면회제도 시행 (~`59. 6.)</td>
+                                </tr>
+                                <tr>
+                                    <td>1953. 11.</td>
+                                    <td>제28보병사단 창설지원</td>
+                                </tr>
+                                <tr>
+                                    <td>1955. 12. 31.</td>
+                                    <td>제1훈련소 (제주) 해체 → 제2훈련소 통합</td>
+                                </tr>
+                                <tr>
+                                    <td>1956.</td>
+                                    <td>교육기간 조정 16주 → 12주</td>
+                                </tr>
+                                <tr>
+                                    <td>1957. 06. 18.</td>
+                                    <td>연무대역 개통</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="1960"> <img src="/img/1960.jpg" width="256" height="256" />
+                            <h1>1960</h1>
+                            <table>
+                                <tr>
+                                    <td>1960. 01. 01.</td>
+                                    <td>교육기간 조정 12주 → 10주</td>
+                                </tr>
+                                <tr>
+                                    <td>1960. 01. 08. ~ 02. 01.</td>
+                                    <td>7개 연대 체제로 전환 (21·22연대 해체)</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="1970"> <img src="/img/1970.jpg" width="256" height="256" />
+                            <h1>1970</h1>
+                            <table>
+                                <tr>
+                                    <td>1971. 09. 03.</td>
+                                    <td>전투경찰 위탁교육</td>
+                                </tr>
+                                <tr>
+                                    <td>1974.</td>
+                                    <td>예비군 간부, 후보생 교육 및 임관</td>
+                                </tr>
+                                <tr>
+                                    <td>1976.</td>
+                                    <td>M-16 소총운용</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="1980"> <img src="/img/1980.jpg" width="256" height="256" />
+                            <h1>1980</h1>
+                            <table>
+                                <tr>
+                                    <td>1980. 07.</td>
+                                    <td>교육기간 조정 10주 → 4주</td>
+                                </tr>
+                                <tr>
+                                    <td>1985. 08. 01.</td>
+                                    <td>논산병원 배속</td>
+                                </tr>
+                                <tr>
+                                    <td>1987. 07.</td>
+                                    <td>교육기간 조정 4주 → 6주</td>
+                                </tr>
+                                <tr>
+                                    <td>1988. 02.</td>
+                                    <td>훈련병 면회제도 부활 (~`98.)</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="1990"> <img src="/img/1990.jpg" width="256" height="256" />
+                            <h1>1990</h1>
+                            <table>
+                                <tr>
+                                    <td>1996. 09. 03.</td>
+                                    <td>K-2 소총 운용</td>
+                                </tr>
+                                <tr>
+                                    <td>1999. 02. 01.</td>
+                                    <td>'육군훈련소'로 부대명 개칭</td>
+                                </tr>
+                                <tr>
+                                    <td>1999. 07. 01.</td>
+                                    <td>대국민 공개부대분류 시행</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="2000"> <img src="/img/2000.jpg" width="256" height="256" />
+                            <h1>2000</h1>
+                            <table>
+                                <tr>
+                                    <td>2000. 01.</td>
+                                    <td>보충역 입소 (사회복무, 산업기능, 공중보건의 등)</td>
+                                </tr>
+                                <tr>
+                                    <td>2004.</td>
+                                    <td>교육기간 조정 6주 → 5주</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="2010"> <img src="/img/2010.jpeg" width="256" height="256" />
+                            <h1>2010</h1>
+                            <table>
+                                <tr>
+                                    <td>2011. 01. 01.</td>
+                                    <td>지구병원 창설 (육일명 제 10-201호)</td>
+                                </tr>
+                                <tr>
+                                    <td>2011. 05. 04.</td>
+                                    <td>훈련병 면회실시</td>
+                                </tr>
+                                <tr>
+                                    <td>2011. 11. 01.</td>
+                                    <td>창설 60주년</td>
+                                </tr>
+                                <tr>
+                                    <td>2012. 03. 01.</td>
+                                    <td>부대 일부개편</td>
+                                </tr>
+                                <tr>
+                                    <td>2016. 03. 01.</td>
+                                    <td>병역심사관리대 신편 (육일명 제 16-82호)</td>
+                                </tr>
+                                <tr>
+                                    <td>2017. 05. 01.</td>
+                                    <td>교육중대장 편성조정 (육일명 제 17-15호)</td>
+                                </tr>
+                                <tr>
+                                    <td>2017. 06. 01.</td>
+                                    <td>직할대 편성조정 (육일명 제 17-245호)</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="2018"> <img src="/img/hoguk.PNG" width="256" height="256" />
+                            <h1>2018</h1>
+                            <table>
+                                <tr>
+                                    <td>2018. 01. 01.</td>
+                                    <td>부대 일부 개편 (육일명 제 17-579호)</td>
+                                </tr>
+                                <tr>
+                                    <td>2018. 현재.</td>
+                                    <td>지구병원 응급의학군의관 신편</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                    <a href="#" id="next">+</a> <a href="#" id="prev">-</a> </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/jquery.timelinr-0.9.7.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+        $(function () {
+            timeline();
+
+            //fadein 이벤트
+            //각 hideme 엘리먼트 위치 파악
+            //모습이 50%이상 보이면 불투명도를 1로 서서히 변경
+            $('.hideme').each(function (i) {
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                if (bottom_of_window > bottom_of_object / 2) {
+                    $(this).animate({
+                        'opacity': '1'
+                    }, 500);
+                }
+            });
+
+            //스크롤이벤트 발생 시
+            //각 fadeinbottom 엘리먼트 위치 파악
+            //모습이 50%이상 보이면 불투명도 1, 마진 0으로 서서히 변경
+            $(window).scroll(function () {
+                //아래에서 올라오면서 나타남
+                $('.fadeinbottom').each(function (i) {
+                    var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    if (bottom_of_window > bottom_of_element / 2) {
+                        $(this).animate({
+                            'opacity': '1'
+                            , 'margin-top': '0px'
+                        }, 1000);
+                    }
+                });
+            });
+        });
+
+        //화면이 바뀔 때마다 타임라인 다시 그림(위치조정을 위해)
+        $(window).resize(function () {
+            timeline();
+        });
+
+        //타임라인 설정 값
+        function timeline() {
+            $().timelinr({
+                arrowKeys: 'true'
+                , autoPlay: 'false'
+                , autoPlayDirection: 'forward'
+                , autoPlayPause: 2000
+            })
+        }
+    </script>
+</body>
+
+</html>

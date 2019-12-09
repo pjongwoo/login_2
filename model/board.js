@@ -7,8 +7,9 @@ var boardSchema = new Schema({
     content : { type: String, required: true },
     regdate: { type: Date, default: Date.now  },
     modidate: { type: Date, default: Date.now  },
-    passwd : { type: String, required: true },
+    idx : { type: String, required: true },
     hit : { type: Number, required: true },
+    isAllow : { type: Boolean, default:false},
 });
 
 module.exports = mongoose.model('board', boardSchema);

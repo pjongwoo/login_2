@@ -1,0 +1,190 @@
+#header {
+    background: url("../img/05main.PNG") no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 30px;
+    height: auto;
+}
+
+
+/*--------------board_div--------------*/
+
+.board_div {
+    padding: 30px 50px;
+}
+
+.board_div .board_head {
+    float: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 20px;
+}
+
+.board_div .board_form {
+    padding-top: 30px;
+    float: right;
+}
+
+.board_div #writeBtn {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.board_table_div {
+    margin: 20px 0px;
+}
+
+.pagination {
+    clear: both;
+}
+
+/*--------------add_div------------*/
+.add_div{
+    width: 100%;
+    padding: 30px 0px;
+}
+
+.addform table{
+    padding: 0px 200px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    max-width: 100%;
+    width: 100%;
+}
+
+#bd_title{
+    width:50px;
+}
+
+.tarea{
+    max-width:100%;
+    width: 100%;
+}
+
+.add_div #addbtn {
+    float: right;
+    width: 80px;
+}
+
+/*---------------view--------------*/
+.viewform table{
+    padding: 0px 200px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    max-width: 100%;
+    width: 100%;
+}
+
+#viewtd{
+    width:70px;
+}
+
+#view_date{
+    text-align: right;
+}
+
+#view_contents{
+    border: 1px solid #ccc;
+    padding: 20px;
+    width:100%;
+    max-width: 100%;
+    height: 260px;
+    vertical-align: top;
+    white-space: pre-line;
+}
+
+.viewbtn{
+    float: right;
+    width: 80px;
+    margin-left: 5px;
+}
+
+
+/*--------------반응형--------------*/
+@media( max-width: 768px) {
+    .board_div .board_form {
+        padding-top: 0px;
+    }
+    /*검색버튼 작게*/
+    #searchForm {
+        width: 100px;
+        margin-right: 5px;
+    }
+    /*테이블 글꼴 작게*/
+    #boardTable {
+        font-size: 13px;
+    }
+
+    .addform table,.viewform table{
+        padding: 0px 100px;
+        width: 100%;
+    }
+}
+
+@media( max-width: 480px) {
+    /*전체적인 사이즈(글꼴,마진) 작게*/
+    .board_div #writeBtn {
+        font-size: 13px;
+    }
+    #searchForm {
+        width: 100px;
+        margin-right: 5px;
+    }
+    .board_div .board_form {
+        padding-top: 0px;
+    }
+    #boardTable {
+        font-size: 13px;
+    }
+
+    /*게시판 테이블 세로정렬로 변경*/
+    /*작성자, 작성일, 조회수 한줄에 보이게*/
+    #boardTable tr,
+    #boardTable td:nth-child(2) {
+        display: block;
+        width: auto;
+    }
+    #boardTable td:nth-child(2) {
+        font-weight: bold;
+    }
+    #boardTable td:nth-child(3)::after,
+    #boardTable td:nth-child(4)::after {
+        content: " / ";
+    }
+    #boardTable tbody tr {
+        border-top: 1px solid #ccc;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    #boardTable tbody th {
+        display: none;
+    }
+    #boardTable td,
+    #boardTable th {
+        border: none;
+    }
+
+    /*기존 테이블헤드 안보이게*/
+    #boardTable thead th {
+        display: none;
+    }
+
+    /*'제목'타이틀만 보이게*/
+    #boardTable thead th:nth-child(2) {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .addform table,.viewform table{
+        padding: 0px 20px;
+    }
+
+    .viewform table{
+        font-size: 10pt;
+    }
+
+    .viewbtn{
+        width: 50px;
+    }
+}

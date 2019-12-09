@@ -42,8 +42,9 @@ router.post('/write', function(req, res, next) {
     datas.name = req.body.name;
     datas.title = req.body.title;
     datas.content = req.body.content;
-    datas.passwd = req.body.passwd;
+    datas.idx = req.session.idx;
     datas.hit = 0;
+
 
     datas.save(function(err){
         if(err) return res.status(500).send({error: 'database failure = '+err});
@@ -71,8 +72,8 @@ router.post('/update', function(req, res, next) {
     boardVo.findOne({_id:req.body.id}, function(err, board){
         if(err) return res.status(500).json({ error: 'database failure' });
         if(!board) return res.status(404).json({ error: 'board not found' });
-        if(req.body.passwd != board.passwd){
-            res.send("<script>alert('패스워드가 일치하지 않습니다.'); location.href = '/mongo/page/1';</script>");
+        if(req.session.idx != board.idx){
+            res.send("<script>alert('글쓴이가 아닙니다.'); location.href = '/mongo/page/1';</script>");
             return;
         }
 
@@ -94,8 +95,8 @@ router.post('/delete', function(req, res, next) {
     boardVo.findOne({_id:req.body.id}, function(err, board){
         if(err) return res.status(500).json({ error: 'database failure' });
         if(!board) return res.status(404).json({ error: 'board not found' });
-        if(req.body.passwd != board.passwd){
-            res.send("<script>alert('패스워드가 일치하지 않습니다.'); location.href = '/mongo/list';</script>");
+        if(req.session.idx != board.idx){
+            res.send("<script>alert('글쓴이가 아닙니다.'); location.href = '/mongo/page/1';</script>");
             return;
         }
         board.deleteOne(function(err){

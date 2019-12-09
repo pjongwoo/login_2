@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/training_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- 헤더 부분-->
+    <header id="header">
+         <%- include('header'); %>
+    </header>
+
+    <!--  신병교육안내 메인콘텐츠  -->
+    <div class="train_div">
+        <div class="tr_head">
+            <h2>신병교육 안내</h2>
+            <h6>Welcome to Korea Army Training Center!</h6>
+        </div>
+
+        <h5 class="title">신병교육 <span style="color: darkblue">필수과제</span> 선정을 통한 최적의 <span style="color: indianred">교육시간</span></h5>
+
+        <!--  교육시간 배분 안내 차트  -->
+        <div id="donutchart"></div>
+
+        <!--  교육편성 안내  -->
+        <h5 class="title">선택과 집중을 통한 교육편성</h5>
+        <div class="classInform">
+            <div class="cls">
+                <p class="cls_title">일반 과목</p>
+                <p>① 정신전력 교육</p>
+                <p>② 제식훈련</p>
+            </div>
+            <div class="cls">
+                <p class="cls_title">쉬운 과목</p>
+                <p>③ 경계</p>
+                <p>④ 구급법</p>
+                <p>⑤ 화생방</p>
+                <p>⑥ 개인화기</p>
+            </div>
+            <div class="cls">
+                <p class="cls_title">어려운 과목</p>
+                <p>⑦ 수류탄</p>
+                <p>⑧ 각개전투</p>
+                <p>⑨ 행군</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        //화면 사이즈 바뀔 때마다 차트 다시 그리기
+        $(window).resize(function () {
+            drawChart();
+        });
+
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            //차트에 넣을 데이터
+            var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day']
+            , ['인권/인성교육', 27]
+            , ['정신전력/제식훈련', 44]
+            , ['기본전투기술', 103]
+            , ['전투체력', 37]
+            , ['지휘/훈육', 41]
+        ]);
+            //차트 옵션
+            var options = {
+                backgroundColor: 'transparent'
+                , pieHole: 0.4
+                , pieSliceText: 'value'
+                , tooltip: {
+                    text: 'percentage'
+                }
+                , colors: [
+              "cornflowerblue"
+              , "olivedrab"
+              , "orange"
+              , "tomato"
+              , "crimson"
+              , "purple"
+              , "turquoise"
+              , "forestgreen"
+              , "navy"
+              , "gray"]
+                , legend: {
+                    //차트에 표시될 데이터
+                    position: 'labeled'
+                    , textStyle: {
+                        fontSize: 10
+                    }
+                }
+            };
+            //차트그리기
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>

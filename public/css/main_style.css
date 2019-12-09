@@ -1,0 +1,266 @@
+.main_div {
+    margin-bottom: 100px;
+}
+
+
+/*--------------main_header--------------*/
+
+#header {
+    /*이미지 경로를 css파일기준 상대적 위치를 적어줄 것!*/
+    background: url("../img/mainImg.PNG") no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 200px;
+    height: auto;
+}
+
+.headerContent {
+    text-align: center;
+    color: white;
+    margin-top: 200px;
+}
+
+
+/*버튼 스타일*/
+
+.headerContent .btn-primary,
+.headerContent a {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fffbfb !important;
+    outline: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+    transition: 0.2s background-color;
+}
+
+.headerContent .btn-primary:hover,
+.headerContent a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/*버튼 눌렸을 때*/
+
+.headerContent .btn-primary:active {
+    transform: translateY(1px);
+}
+
+
+/*--------------quick_menu--------------*/
+
+.background_opacity {
+    background: url("../img/mainImg.PNG") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.quick_menu {
+    /* 배경 투명도 설정  */
+    background: #ffffffdd;
+    /* IE에선 투명도가 안먹히기 때문에 흰색으로 */
+    background: -ms-linear-gradient(#ffffff, #ffffff);
+    overflow: hidden;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.quick_menu ul {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 0px;
+    list-style: none;
+}
+
+.quick_menu ul>li {
+    color: black;
+    text-align: center;
+    display: inline-block;
+    margin: 20px 20px;
+}
+
+.quick_menu ul>li:hover,
+.quick_menu ul>li>a:hover {
+    color: black;
+    transform: scale(1.1);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.quick_menu ul>li>a:visited {
+    background-color: #ddd;
+}
+
+.quick_menu img {
+    width: 70px;
+}
+
+.quick_menu h5 {
+    color: black;
+    font-size: 15px;
+}
+
+
+/*--------------inform_div--------------*/
+
+.inform_div {
+    background: url("../img/04main.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+/*카운트 처리할 숫자 굵게*/
+.counter {
+    font-weight: bold;
+}
+
+
+/*--------------img_menu--------------*/
+
+.img_menu {
+    width: 100%;
+    height: 350px;
+}
+
+.img_menu ul {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img_menu ul>li {
+    width: 25%;
+    height: 100%;
+    margin: 0;
+    float: left;
+    display: inline-block;
+    background: #000000;
+}
+
+.img_menu .box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img_menu .box a,
+.img_menu .box a>img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(60%);
+}
+
+/*마우스 오버시 밝아지게*/
+.img_menu .box a:hover {
+    filter: brightness(150%);
+}
+
+.img_menu .box h4 {
+    position: absolute;
+    color: white;
+    bottom: 35px;
+    left: 15px;
+}
+
+.img_menu .box h6 {
+    position: absolute;
+    color: white;
+    bottom: 15px;
+    left: 15px;
+}
+
+
+/*--------------부대소식--------------*/
+
+.news_div {
+    clear: both;
+    margin-top: 100px;
+    position: relative;
+}
+
+.news_div h3 {
+    text-align: center;
+}
+
+/*슬라이더 센터 요소 크기 키우기*/
+.slick-slide.slick-center {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.slick-dots {
+    width: 5px;
+    height: 5px;
+}
+
+/*각 카드 스타일*/
+.card {
+    margin: 50px 20px;
+    padding: 0px;
+    max-width: 350px;
+    max-height: 450px;
+    box-shadow: 0px 10px 20px 0px rgba(38, 31, 31, 0.2);
+}
+
+.card-body {
+    padding: 15px;
+    height: 170px;
+    font-size: 13px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+}
+
+
+/*--------------반응형--------------*/
+
+
+@media (max-width:768px) {
+    /* 화면이 좁아지면서 글자가 겹치는것 방지 */
+    .img_menu h4 {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width:480px) {
+    /* 아이콘 사이즈와 마진 조절해 작은화면에선 2,2개씩 보여지게 */
+    .quick_menu img {
+        width: 80px;
+    }
+    .quick_menu ul>li {
+        margin: 25px 30px;
+    }
+    
+    .inform_div h3 {
+        font-size: 20px;
+    }
+    
+    /* img_menu 가로에서 세로배치로 변경 */
+    .img_menu ul>li {
+        width: 100%;
+        height: 30%;
+        margin: 0;
+        background: #000000;
+    }
+    
+    .card-title {
+        font-size: 15px;
+    }
+    .card-body {
+        font-size: 12px;
+    }
+}
+

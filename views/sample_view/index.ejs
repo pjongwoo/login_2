@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/main_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" /> </head>
+
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+        <%- include('header'); %>
+    </header>
+
+    <!-- 메인콘텐츠 (사용자가 가장 자주 방문하는 메뉴로 구성) -->
+    <div class="main_div">
+        <!--    quick_menu(훈련병찾기/편지쓰기/Q&A/오시는길 메뉴로 바로가기)   -->
+        <div class="background_opacity">
+            <div class="quick_menu">
+                <ul>
+                    <li>
+                        <a href="/04_family"> <img src="/img/icon_people.png" alt="사람아이콘">
+                        <h5>훈련병찾기</h5></a>
+                    </li>
+                    <li>
+                        <a href="/04_family?sub=letter"> <img src="/img/icon_letter.png" alt="편지아이콘">
+                        <h5>편지쓰기</h5></a>
+                    </li>
+                    <li>
+                        <a href="/04_family?sub=qna"> <img src="/img/icon_question.png" alt="물음표아이콘">
+                        <h5>Q&A</h5></a>
+                    </li>
+                    <li>
+                        <a href="/01_introduce"> <img src="/img/icon_map.png" alt="지도아이콘">
+                        <h5>오시는 길</h5></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--    inform_div (훈련소 연혁&부가정보 표시)   -->
+        <div class="inform_div">
+            <h3>1951년부터 <span class="counter">2018</span>년까지</h3>
+            <h3>약 <span class="counter">7,800,000</span> 명의 장병 양성</h3>
+            <h6>이번주 입영자 <span class="counter">1,527</span>명 / 수료예정자 <span class="counter">1,389</span>명</h6>
+        </div>
+
+        <!--    img_menu (입영/수료, 훈련과정, 시설안내, 전체일정 메뉴로 바로가기)     -->
+        <div class="img_menu">
+            <ul>
+                <li>
+                    <div class="box">
+                        <a href="/02_AdoptComplete"><img src="/img/hoguk.PNG" alt="훈련소사진"></a>
+                        <h4>입영/수료</h4>
+                        <h6>Adoption/ completion</h6> </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <a href="/03_Training"><img src="/img/hanggun.PNG" alt="훈련사진"></a>
+                        <h4>훈련과정</h4>
+                        <h6>Training process</h6> </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <a href="/03_Training?sub=facility"><img src="/img/sisul.PNG" alt="시설사진"></a>
+                        <h4>시설안내</h4>
+                        <h6>Facility guide</h6> </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <a href="#"><img src="/img/calendar.PNG" alt="달력사진"></a>
+                        <h4>전체일정</h4>
+                        <h6>Schedule information</h6> </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--    news_div (부대소식)     -->
+        <div class="news_div">
+            <h3>부대소식</h3>
+            <div class="slider">
+                <div class="card"> <img class="card-img-top" src="/img/news1.PNG" alt="기사사진1">
+                    <div class="card-body">
+                    <h4 class="card-title">더캠프 앱 협약체결</h4>
+                    9월 5일 앱 개발사 '에이블다온소프트'와 업무 협약 체결 </div>
+                </div>
+                <div class="card"> <img class="card-img-top" src="/img/news2.PNG" alt="기사사진2">
+                    <div class="card-body">
+                    <h4 class="card-title">호국보훈의 달 행사</h4>
+                    6.25전쟁 68주년 맞이 참전용사, 보훈단체 회원 부대 초청 열병식, 군악연주회 등 다양한 프로그램 실행 </div>
+                </div>
+                <div class="card"> <img class="card-img-top" src="/img/news3.PNG" alt="기사사진3">
+                    <div class="card-body">
+                    <h4 class="card-title">대전현충원 참배</h4>
+                    호국보훈의 달을 맞아 기간장병 70여 명 대전 현충원 방문 </div>
+                </div>
+                <div class="card"> <img class="card-img-top" src="/img/news4.PNG" alt="기사사진4">
+                    <div class="card-body">
+                    <h4 class="card-title">건강한 여름나기 시범식 교육</h4>
+                    혹서기 대비 '건강한 여름나기 시범식 교육' 실시 훈련소장 주관으로 연대장 등 교육 관계관들 참석 </div>
+                </div>
+                <div class="card"> <img class="card-img-top" src="/img/news5.PNG" alt="기사사진5">
+                    <div class="card-body">
+                    <h4 class="card-title">연무대 가족사랑 콘서트</h4>
+                    '훈련소에서 함께 근무하며 동거동락하는 모두가 한가족'이라는 취지로 콘서트 개최. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.waypoints.js"></script>
+    <script type="text/javascript" src="/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+    <script>
+        //0부터 써있는 숫자까지 카운트
+        $('.counter').counterUp({
+            delay: 20
+            , time: 3000
+        });
+
+        //슬라이더 설정 : 네비게이션,무한,센터모드,한번에 보여줄 슬라이더, 자동재생
+        $('.slider').slick({
+            dots: true
+            , infinite: true
+            , centerMode: true
+            , centerPadding: '20%'
+            , slidesToShow: 3
+            , speed: 500
+            , autoplay: true
+            , autoplaySpeed: 2000
+            , prevArrow: false
+            , nextArrow: false
+            , responsive: [{
+                breakpoint: 992
+                , settings: {
+                    slidesToShow: 1
+                }
+                }]
+        });
+        /*
+        $(document).ready(function () {
+            $("#footer").load("footer.html");
+            $("#header").load("header.html");
+        });*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/training_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- 헤더 부분-->
+    <header id="header">
+         <%- include('header'); %>
+    </header>
+
+    <!--  시설안내 메인콘텐츠  -->
+    <div class="train_div">
+        <div class="tr_head">
+            <h2>시설안내</h2>
+            <h6>Welcome to Korea Army Training Center!</h6> </div>
+
+        <!--시설사진 슬라이더-->
+        <div class="slider">
+            <div><img src="/img/facility1.PNG" alt="생활관">
+                <h6 class="faInfrom">병영생활관</h6></div>
+            <div><img src="/img/facility2.PNG" alt="세면실">
+                <h6 class="faInfrom">세면실</h6></div>
+            <div><img src="/img/facility3.PNG" alt="병영식당">
+                <h6 class="faInfrom">병영식당</h6></div>
+            <div><img src="/img/facility4.PNG" alt="연무관">
+                <h6 class="faInfrom">연무관 외부</h6></div>
+            <div><img src="/img/facility5.PNG" alt="연무관내부">
+                <h6 class="faInfrom">연무관 내부</h6></div>
+        </div>
+        <!--  시설 세부 안내사항  -->
+        <table class="table">
+            <tr>
+                <td>병영시설</td>
+                <td>병영생활관, 세면실, 샤워실, 목욕탕, 병영식당, 연무관, 다목적강당</td>
+            </tr>
+            <tr>
+                <td>복지시설</td>
+                <td>영내 - 황산회관(우체국, 은행, 면회실), 영외 - 동산회관(연회실, 객실)</td>
+            </tr>
+            <tr>
+                <td>의료시설</td>
+                <td>연대 의무실 - 진료실, 병실(20병상), 환자대기실 / 지구병원</td>
+            </tr>
+            <tr>
+                <td>종교활동</td>
+                <td>기독교, 불교, 천주교, 원불교</td>
+            </tr>
+            <tr>
+                <td>보급품</td>
+                <td>유비쿼터스 시스템을 이용해 사이즈 측정 후 지급
+                    <br>최초 지급 품목 - 베레모 등 28개 품목 58점</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script>
+        //슬라이더 설정
+        $('.slider').slick({
+            dots: true
+            , infinite: true
+            , centerMode: true
+            , centerPadding: '60px'
+            , speed: 500
+            , autoplay: true
+            , autoplaySpeed: 2000
+            , slidesToShow: 3
+            , responsive: [
+                {
+                    breakpoint: 768
+                    , settings: {
+                        arrows: false
+                        , centerMode: true
+                        , centerPadding: '10px'
+                        , slidesToShow: 3
+                    }
+        }
+                , {
+                    breakpoint: 480
+                    , settings: {
+                        arrows: false
+                        , centerMode: true
+                        , centerPadding: '0px'
+                        , slidesToShow: 1
+                    }
+        }
+      ]
+        });
+    </script>
+</body>
+
+</html>

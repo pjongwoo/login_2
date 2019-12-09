@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육군훈련소</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/family_style.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Quicksand" rel="stylesheet">
+    </head>
+
+<body>
+     <!-- 헤더 부분-->
+     <header id="header">
+          <%- include('header'); %>
+     </header>
+
+    <!-- 훈련병 찾기 메인 콘텐츠 -->
+    <div class="family_div">
+        <div class="fa_head">
+            <h2>훈련병 찾기</h2>
+            <h6>Welcome to Korea Army Training Center!</h6> </div>
+
+        <!-- 공지사항 -->
+        <div class="notice"> <span class="glyphicon glyphicon-bookmark"></span>
+            <p>훈련병 찾기 및 편지쓰기는 훈련병의 소속이 확정되는 입영일 다음주 수요일 이후 조회 가능합니다.</p>
+            <p>훈련병의 입영날짜, 생년월일, 이름으로 검색하면 훈련병의 분대사진과 포토존을 확인 할 수 있습니다.</p>
+            <p>1차 분대사진은 훈련병 입영일 다음주 수요일 / 2차 분대사진은 입영후 4주차 수요일 게시됩니다.</p>
+        </div>
+
+        <!-- 검색div -->
+        <div class="findArmy">
+            <h6>검색조건*</h6>
+            <form method="post" action="/04_family/process/searchTrainee" class="form-inline my-2 my-lg-0">
+                <!-- select form -->
+                입영일
+                <select name="entrydate" class="form-control form-control-sm" id="exampleFormControlSelect1">
+                    <option>2018.10.15</option>
+                    <option>2018.10.08</option>
+                    <option>2018.10.01</option>
+                    <option>2018.09.24</option>
+                    <option>2018.09.17</option>
+                </select>
+
+                <!-- input form -->
+                이름
+                <input name="name" class="form-control form-control-sm" type="text" placeholder="이름" aria-label="Search">
+
+                <!-- input form -->
+                생년월일
+                <input name="birth" class="form-control form-control-sm" id="datepicker" />
+
+                <!-- select form -->
+                연대
+                <select name="yeon" class="form-control form-control-sm mr-2" id="exampleFormControlSelect1">
+                    <option>23연대</option>
+                    <option>25연대</option>
+                    <option>26연대</option>
+                    <option>27연대</option>
+                    <option>28연대</option>
+                    <option>29연대</option>
+                    <option>30연대</option>
+                </select>
+                <button name="" class="btn btn-outline-primary btn-sm" type="submit">검색</button>
+            </form>
+
+            <!-- 검색결과 부분 -->
+            <h6>검색 리스트*</h6>
+            <table id="searchTable" class="table table-sm table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>입영일</th>
+                        <th>교육연대</th>
+                        <th>중대</th>
+                        <th>소대</th>
+                        <th>교번</th>
+                        <th>생년월일</th>
+                        <th>훈련병이름</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--trainees에 훈련병 정보가 있으면 테이블에 뿌려줌-->
+                    <!--trainees에 null이 있으면 else 문으로
+                        '검색 결과가 없습니다.' 라는 메세지를 띄어줌-->
+                    <% if(trainees) { %>
+                        <td><%= trainees.entrydate %></td>
+                        <td><%= trainees.yeon %></td>
+                        <td><%= trainees.jung %></td>
+                        <td><%= trainees.so %></td>
+                        <td><%= trainees.gyo %></td>
+                        <td><%= trainees.birth %></td>
+                        <td><%= trainees.name %></td>
+                    <% } else { %>
+                    <td colspan="7"> 검색 결과가 없습니다. </td>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-primary" id="writeBtn" type="submit">편지쓰기</button>
+    </div>
+
+    <!-- footer부분  -->
+    <footer class="footer_div">
+        <%- include('footer'); %>
+    </footer>
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+        //생년월일 form 클릭 시 datepicker 나옴
+        $(function () {
+            $("#datepicker").datepicker({});
+        });
+    </script>
+</body>
+
+</html>
