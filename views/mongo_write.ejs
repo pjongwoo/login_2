@@ -127,7 +127,7 @@
             <h3><%= title %></h3>
 
             <form action="/mongo/write" method="post">
-                <table>
+                <table style="width:100%;">
                     <tr>
                         <td>작성자</td>
                         <td><%=name%><input type="hidden" name="name" id="name" value="<%=name%>" readonly required/></td>
@@ -138,12 +138,13 @@
                     </tr>
                     <tr>
                         <td>내용</td>
-                        <td><textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea></td>
-                        <td><textarea name="content" id="content" cols="30" rows="10" required></textarea></td>
+                        <td><textarea name="content" id="content" cols="30" rows="10" style="width:766px; height:412px; display:none;" required></textarea></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <button type="submit">글쓰기</button>
+
+                            <a href="/mongo/page">목록</a>
                         </td>
                     </tr>
                 </table>
