@@ -17,6 +17,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= title %></title>
+     <!-- 부트스트랩 추가 :홍준 -->   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link ref="stylesheet" href="/stylesheets/style.css"/>
     <style type="text/css">
 
@@ -58,14 +62,21 @@
     <div id="header" class="hBlue"><!-- header 시작-->
         <div class="innerH">
             <!-- 상단 - 유틸 -->
-            <div class="util">
-                <ul>
-                    <li>
-
-                    </li>
-                    <li><a href="#"><img src="/images/ico_logout.png" alt="로그아웃"></a></li>
-                    <!--	<li><a href="#"><img src="/images/ico_setting.png" alt="설정" /></a></li> -->
-                </ul>
+            <p style="display: inline-block;
+            color:#f8f9fa;
+            padding: 1% 0 1% 1.5%;"> 혼달</p>
+            <div class="util" style="z-index: 99999;">
+                    <ul>
+                        <li>
+                            <img style="display: block;
+                            margin: 0px;
+                            width: 45px;
+                            " src="/image/ico_logout.png" alt="로그아웃">
+                            <a style="font-weight: bold;
+                            color:#f8f9fa;
+                            text-decoration: none;" href="/logout">로그아웃</a>
+                        </li>
+                    </ul>
             </div>
             <!-- //상단 - 유틸 -->
 
@@ -131,16 +142,29 @@
     <!-- header 종료-->
     <div id ='container'><!-- body 시작-->
         <div class='content'>
-            <h1><%= title %></h1>
-            <a href="/mongo/write">글쓰기</a>
-            <table border="1">
+         <div style="display: flex;margin-bottom: 10px;justify-content: space-between;">
+            <p style="font-size: 15px;font-weight: bold;">
+                 <%= title %>
+            </p>
+             <button type="button" class="btn btn-primary">
+                 <a style=" 
+                    text-decoration: none;
+                    color: #fff;"
+                    href="/mongo/write">
+                     글쓰기
+                    </a>
+                </button>
+         </div>
+         <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td>작성자</td>
-                    <td>제목</td>
-                    <td>조회수</td>
-                    <td>수정일</td>
-                    <td>등록일</td>
+                    <th scope="col">작성자</th>
+                    <th scope="col">제목</th> 
+                    <th scope="col">조회수</th>
+                    <th scope="col">수정일</th>
+                    <th scope="col">등록일</th>
                 </tr>
+            </thead>
                 <%
                 for(var i=(page*page_num)-page_num; i<(page*page_num) ; i++){
                 if(i>length){
@@ -149,7 +173,7 @@
                     var data = rows[i];
                 %>
                 <tr>
-                    <td><%= data.name %></td>
+                    <td scope="row"><%= data.name %></td>
                     <td><a href="/mongo/read/<%= data._id %>"><%= data.title %></a></td>
                     <td><%= data.hit %></td>
                     <td><%= data.modidate %></td>
@@ -176,7 +200,7 @@
 
 </div>
 <!-- Footer -->
-<footer id="footer">
+<footer id="footer" style="    text-align: center;">
     <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
 </footer>
 <!-- Footer -->

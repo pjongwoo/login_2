@@ -48,6 +48,7 @@
 <div id="header" class="hBlue"><!-- header 시작-->
 <div class="innerH">
 <!-- 상단 - 유틸 -->
+
 	<div class="util" style="z-index: 99999;">
 	<ul>
 		<li>
@@ -59,7 +60,13 @@
 			</a> 
 			<% } %>` 
 		</li>
-		<li><a href="/logout"><img src="/images/ico_logout.png" alt=""> 로그아웃</a> </li>
+		<li>
+				<img style="display: block;
+				margin: 0px;
+				width: 45px;" src="/image/ico_logout.png" alt="로그아웃">
+				<a style="font-weight: bold;
+				color: #fff;" href="/logout">로그아웃</a>
+		</li>
 		<!--	<li><a href="#"><img src="/images/ico_setting.png" alt="설정" /></a></li> -->
 	</ul>
 </div>
@@ -135,10 +142,10 @@
 
 </div>
 <!-- Footer -->
- <footer id="footer">
-	<p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-</footer>
-<!-- Footer -->
+<footer id="footer" style="    text-align: center;">
+		<p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+	</footer>
+	<!-- Footer -->
 
 
 </body>
