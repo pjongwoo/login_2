@@ -8,7 +8,7 @@
 .hWhite{background:#ffff !important;}
 
 /******************************************** 전체 레이아웃 ********************************************/
-#wrap{position:relative;height:100%;}
+#wrap{position:relative;height:auto;}
 #header{position:fixed;width:100%;height:50px;top:0px;background:#000000;z-index:0;}
 #header .innerH{margin:0 0px;overflow:hidden;}
 #header:after{display:block;content:'';clear:both;width:100%;height:3px;background:#009666;position:absolute;bottom:0;}
@@ -65,7 +65,7 @@
 
 
 #container{width:100%;height:100%;margin:0 auto;*zoom:1;}
-.content{padding:500px 200px 30px 200px !important;}
+.content{padding:500px 0px 30px 0px !important; max-width:960px; margin:0 auto;}
 
 /******************************************** 반응형 ********************************************/
 
