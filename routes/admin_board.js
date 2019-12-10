@@ -107,7 +107,7 @@ router.get('/page/:page', function(req, res, next) {
 
     boardVo.find({flag:false},function(err, rows){
         if(err) return res.status(500).send({error: 'database failure'});
-        res.render("admin_page", {title: '관리자 게시판 리스트', rows: rows, page:page, length:rows.length-1, page_num:10, pass:true});
+        res.render("admin_page", {title: '게시판 리스트', rows: rows, page:page, length:rows.length-1, page_num:10, pass:true});
     });
 });
 
