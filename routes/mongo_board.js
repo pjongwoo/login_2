@@ -48,7 +48,8 @@ router.post('/write', function(req, res, next) {
 
     datas.save(function(err){
         if(err) return res.status(500).send({error: 'database failure = '+err});
-        res.redirect('/mongo/page/1');
+        res.send("<script>alert('관리자 승인이 되면 등록됩니다.'); location.href = '/mongo/page/1';</script>");
+        // res.redirect('/mongo/page/1');
     });
 
 });
