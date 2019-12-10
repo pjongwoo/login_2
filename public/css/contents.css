@@ -1,0 +1,367 @@
+@charset "utf-8";
+
+/******************************************** 버튼모음 ********************************************/
+/* 왼쪽 글쓰기 */
+.btnLwrite{position:relative;display:block;font-size:14px;color:#222;font-weight:bold;padding:10px 0 10px 10px;background:#fff;border:1px solid #2c4cae;text-align:center;box-sizing:border-box;
+-webkit-box-shadow: 1px 1px 3px 0px rgba(204,204,204,0.8);
+-moz-box-shadow: 1px 1px 3px 0px rgba(204,204,204,0.8);
+box-shadow: 1px 1px 3px 0px rgba(204,204,204,0.8);
+} 
+.btnLwrite:before{display:block;content:url('../../images/ico_write.png');clear:both;position:absolute;top:28%;left:20px;}
+.btnLwrite:hover{background:#2c4cae;color:#fff;}
+
+/* 기본버튼 */
+.btnBlue{display:inline-block;padding:10px 30px;background:#344fa0;color:#fff;}
+.btnBlue:hover{background:#0a1d54;color:#fff;}
+.btnGreen{display:inline-block;padding:10px 30px;background:#009666;color:#fff;}
+.btnGreen:hover{background:#003625;color:#fff;}
+.btnGray{display:inline-block;padding:10px 30px;background:#ddd;color:#555;}
+.btnGray:hover{background:#888;color:#fff;}
+.btnWhite{display:inline-block;padding:9px 30px;border:1px solid #344fa0;color:#555;}
+.btnWhite:hover{background:#f0f2f9;color:#222;}
+
+/* 작은버튼 */
+.btnSblue{display:inline-block;padding:3px 20px;background:#344fa0;color:#fff;}
+.btnSblue:hover{background:#0a1d54;color:#fff}
+.btnSgreen{display:inline-block;padding:3px 20px;background:#009666;color:#fff;}
+.btnSgreen:hover{background:#003625;}
+.btnSgray{display:inline-block;padding:3px 20px;background:#ddd;color:#555;}
+.btnSgray:hover{background:#888;color:#fff;}
+.btnSwhite{display:inline-block;padding:2px 20px;border:1px solid #344fa0;color:#555;}
+.btnSwhite:hover{background:#f0f2f9;color:#222;}
+
+/* 미니버튼 */
+.btnSsblue{display:inline-block;padding:1px 10px;background:#344fa0;color:#fff;font-size:11px;}
+.btnSsblue:hover{background:#0a1d54;color:#fff}
+.btnSsgreen{display:inline-block;padding:1px 10px;background:#009666;color:#fff;font-size:11px;}
+.btnSsgreen:hover{background:#003625;}
+.btnSsgray{display:inline-block;padding:1px 10px;background:#ddd;color:#555;font-size:11px;}
+.btnSsgray:hover{background:#888;color:#fff;}
+.btnSswhite{display:inline-block;padding:1px 10px;border:1px solid #344fa0;color:#555;font-size:11px;}
+.btnSswhite:hover{background:#f0f2f9;color:#222;}
+.btnSsred{display:inline-block;padding:1px 10px;background:#e6410e;color:#fff;font-size:11px;}
+.btnSsred:hover{background:#810000;color:#fff;}
+
+
+.sc{background:#fff;width:600px;height:auto; position:absolute;box-shadow:5px 5px 13px 0 rgba(0, 0, 0, 0.03);border:3px solid #213344;}
+.sc h2{background:#213344;font-size:18px;font-weight:bold;color:#fff;padding:7px 30px 12px 30px;}
+.sc .con{padding:25px 30px;}
+
+
+.scc{background:#fff;width:550px;height:180px; position:absolute;box-shadow:5px 5px 13px 0 rgba(0, 0, 0, 0.03);border:3px solid #213344;}
+.scc h2{background:#213344;font-size:18px;font-weight:bold;color:#fff;padding:7px 30px 12px 30px;}
+.scc .con{padding:45px 150px;}
+
+
+/* 보이기, 접기 버튼 */
+.btnToggle{display:inline-block;padding:0 12px 6px 12px;background:#ddd;color:#2c4cae;font-weight:bold;font-size:30px;line-height:30px;float:left;margin-right:5px;}
+.btnToggle:hover{background:#999;color:#000;}
+
+/* 폴더 버튼 */
+.btnFolder{display:inline-block;padding:9px 4px;border:1px solid #344fa0;color:#555;font-size:12px;}
+.btnFolder:hover{background:#f0f2f9;color:#222;}
+
+/* 버튼박스 */
+.btnArea{margin:20px 0 10px;overflow:hidden;}
+.btnArea select{float:left;margin-right:5px;}
+.btnArea2{margin:10px 0 0;text-align:right;}
+
+/******************************************** 레이어팝업 ********************************************/
+.pop{background:#fff;width:450px;position:absolute;box-shadow:5px 5px 13px 0 rgba(0, 0, 0, 0.03);border:3px solid #213344;visibility:hidden;opacity:0;-webkit-transition: all 180ms ease-in; transition: all 180ms ease-in;}
+.pop h2{background:#213344;font-size:18px;font-weight:bold;color:#fff;padding:7px 30px 12px 30px;}
+.pop .con{padding:25px 30px;}
+.popBox_btn{cursor:pointer;}
+.popBox2_btn{cursor:pointer;}
+.popBox3_btn{cursor:pointer;}
+.popBox4_btn{cursor:pointer;}
+
+.popBox{top:25%;left:calc(50% - 25%);}
+.popBox.popBox-active{top:7%;visibility: visible;opacity: 1;-webkit-transition: all 250ms ease-out;transition: all 250ms ease-out;}
+.popBox .popBox_close{font-size:22px;color:#fff;position:absolute;right:10px;top:-12px;cursor:pointer;padding:15px;-webkit-transition: color 150ms ease; transition: color 150ms ease;}
+.close2{color:#000 !important;padding:20px 15px !important;}
+.popBox .popBox_close:hover{color:#009666;}
+
+
+.popBox2{top:40%;left:40%;width:800px;}
+.popBox2.popBox2-active{top:30%;visibility: visible;opacity: 1;-webkit-transition: all 250ms ease-out;transition: all 250ms ease-out;}
+.popBox2 .popBox2_close{font-size:22px;color:#fff;position:absolute;right:10px;top:-12px;cursor:pointer;padding:15px;-webkit-transition: color 150ms ease; transition: color 150ms ease;}
+.popBox2 .popBox2_close:hover{color:#009666;}
+
+
+
+.popBox3{top:0%;left:25%;width:800px;}
+.popBox3.popBox3-active{top:15%;visibility: visible;opacity: 1;-webkit-transition: all 250ms ease-out;transition: all 250ms ease-out;}
+.popBox3 .popBox3_close{font-size:22px;color:#fff;position:absolute;right:10px;top:-12px;cursor:pointer;padding:15px;-webkit-transition: color 150ms ease; transition: color 150ms ease;}
+.popBox3 .popBox3_close:hover{color:#009666;}
+
+/*	popBox4: customer by wfellow.	*/
+.popBox4{top:0%;left:25%;width:800px;}
+.popBox4.popBox4-active{top:8%;visibility: visible;opacity: 1;-webkit-transition: all 250ms ease-out;transition: all 250ms ease-out;}
+.popBox4 .popBox4_close{font-size:22px;color:#fff;position:absolute;right:10px;top:-12px;cursor:pointer;padding:15px;-webkit-transition: color 150ms ease; transition: color 150ms ease;}
+.popBox4 .popBox4_close:hover{color:#009666;}
+
+/******************************************** 메인-대시보드 ********************************************/
+.main{background:#f0f2f9;}
+
+/* 메인-대시보드 */
+.mDashboard{margin:0 auto;width:90%;padding-left:60px;padding-top:90px;}
+
+.mDashboard dl.dashbox{overflow:hidden;}
+.mDashboard dl.dashbox > dt{position:relative;float:left;width:20%;box-sizing:border-box;}
+.mDashboard dl.dashbox > dd{position:relative;float:left;width:60%;padding-left:15px;box-sizing:border-box;}
+.mDashboard dl.dashbox > dd + dd{width:20%;box-sizing:border-box;}
+
+.mDashboard dl.dashbox > dt .box, .mDashboard dl.dashbox > dd .box{background:#fff;margin-bottom:15px;padding:24px;box-sizing:border-box;
+-webkit-box-shadow: 1px 1px 3px 0px rgba(204,204,204,0.8);
+-moz-box-shadow: 1px 1px 3px 0px rgba(204,204,204,0.8);
+box-shadow: 1px 1px 3px 0px rgba(204,204,204,0.8);
+}
+.mDashboard dl.dashbox > dt .box h2, .mDashboard dl.dashbox > dd .box h2{position:relative;font-size:18px;font-weight:bold;color:#222;padding:0 0 15px 0;}
+.mDashboard dl.dashbox > dt .box h2:before, .mDashboard dl.dashbox > dd .box h2:before{display:block;content:'';clear:both;width:4px;height:16px;background:#009666;position:absolute;top:7px;left:-24px;}
+.mDashboard dl.dashbox > dt .box h2 a img, .mDashboard dl.dashbox > dd .box h2 a img{position:absolute;top:0;right:0;}
+
+/* 메인-대시보드-고객관리 */
+.mClient{min-height:347px;}
+.mClient dt{text-align:center;padding:5px 0 5px;}
+.mClient dt p{margin-top:15px;}
+.mClient dt p span{color:#2c4cae;font-size:18px;font-weight:bold;}
+.mClient dd{border-top:1px solid #ebebeb;text-align:center;padding:7px 0;}
+.mClient a.btn{display:block;font-weight:bold;margin-top:10px;text-align:center;padding:8px 0;background:#f0f2f9;}
+.mClient a.btn:hover{background:#ced2e1;}
+.mClient a.btn img{margin:4px 6px 0 0;}
+
+/* 메인-대시보드-춸간일정 */
+.mCalendar{min-height:344px;}
+.mCalendar .calendarBox{}
+.mCalendar .calendarBox div{position:relative;text-align:center;margin:5px 0 15px;}
+.mCalendar .calendarBox div p{font-size:22px;color:#222;}
+.mCalendar .calendarBox div .pre{position:absolute;top:7px;left:0;}
+.mCalendar .calendarBox div .next{position:absolute;top:7px;right:0;}
+.mCalendar .calendarBox table{width:100%;}
+.mCalendar .calendarBox table thead{border-top:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;}
+.mCalendar .calendarBox table thead th{font-weight:bold;padding:4px 0;}
+.mCalendar .calendarBox table tbody td{text-align:center;padding:7px 0;}
+.mCalendar .calendarBox .sun{color:#e6410e;}/* 일요일 */
+.mCalendar .calendarBox .satur{color:#2c4cae;}/* 토요일 */
+.mCalendar .calendarBox .today{background:#009666;color:#fff;font-weight:bold;border-radius:300px;}/* 오늘날짜 */
+.mCalendar .calendarBox .on{border-bottom:2px solid #222;}/* 일정 */
+
+/* 메인-대시보드-프로젝트 */
+.mProject{min-height:376px;}
+
+/* 메인-대시보드-공지사항 */
+.mNotice{min-height:315px;}
+
+/* 메인-대시보드-근태관리, 거래처목럭 */
+.mlist{min-height:345px;}
+.mlist dt{border-top:1px solid #e3e3e3;padding:10px 0 7px;position:relative;}
+.mlist dt span{color:#2c4cae;font-size:16px;font-weight:bold;}
+.mlist dd{padding-bottom:10px;}
+.mlist a.btnOk{display:inline-block;font-size:12px;font-weight:bold;padding:1px 10px;background:#009666;color:#fff;position:absolute;top:10px;right:0;} /* 승인 */
+.mlist a.btnReturn{display:inline-block;font-size:12px;font-weight:bold;padding:1px 10px;border:1px solid #555;position:absolute;top:10px;right:0;} /* 반려 */
+
+
+/******************************************** 서브 모음 ********************************************/
+.title{position:relative;}
+.title h3{font-size:28px;font-weight:bold;color:#222;}
+.title h3 span{font-size:13px;}
+.title img{margin:5px 0 0 10px;vertical-align:middle;}
+.title .search{position:absolute;top:0;right:0;}
+.title .search{position:absolute;top:0;right:0;}
+
+/* 검색 */
+.searchArea{overflow:hidden;}
+.searchArea select{float:left;width:130px;}
+
+.searchArea .inpTxt{width:300px;margin-left:-1px;}
+.searchArea a.btnSearch{position:absolute;bottom:-1px;right:-1px;display: block;width:50px;height:36px;background:url("../../images/ico_search.png") no-repeat 50% 50%;}
+.searchArea a.btnSearch em{position: absolute; top:0; left:0; display: block; width:0; height: 0; overflow: hidden; opacity: 0;}
+.scbtnSearch{position:absolute;bottom:-1px; left:100%; display: block;width:50px;height:36px;background:url("../../images/ico_search.png") no-repeat 50% 50%;}
+.scbtnSearch em{position: absolute; top:0; left:0; display: block; width:0; height: 0; overflow: hidden; opacity: 0;}
+
+/* 페이징 */
+.listPaging {text-align:center;overflow:hidden;margin-top:30px;}
+.listPaging a span {display:inline-block;padding:7px 10px; text-align:center;line-height:14px;border:#e3e3e3 1px solid;}
+.listPaging a span:hover {border:#5a5a5a 1px solid; background:#707070; color:#fff;}
+.listPaging a .on {padding:7px 10px; text-align:center; border:#e3e3e3 1px solid; background:#707070; color:#fff;}
+.listPaging a.mr{margin-right:15px;}
+.listPaging a.ml{margin-left:15px;}
+
+/* 사용자정보 */
+.userArea{overflow:hidden;margin-top:50px;}
+.userArea .userCon{float:left;width:25%;}
+.userArea .userCon dt{margin-bottom:30px;}
+.userArea .userList{float:left;width:50%;}
+
+/* 워크플랜 */
+.lnbWorkplan{border-top:1px solid #e3e3e3;margin:0 20px}
+.lnbWorkplan li{border-bottom:1px solid #e3e3e3;padding:10px 0;}
+.lnbWorkplan li.on a{color:#009666;font-weight:bold;}
+.lnbWorkplan .abc{height:700px; overflow:auto;}
+
+.wordkplan{position:relative;height:532px;background:url("../../images/bg_wordkplan.png") no-repeat;}
+.wordkplan .box{position:absolute;font-size:20px;font-weight:bold;color:#333;width:150px;line-height:70px;text-align:center;border:2px solid #344fa0;border-radius:300px;background:#fff;z-index:10;
+-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);}
+.wordkplan .box:hover{border:2px solid #009666;color:#009666;}
+
+.wordkplan .subBox{position:absolute;font-weight:bold;color:#333;width:60px;line-height:60px;text-align:center;border:1px solid #aaa;border-radius:300px;background:#fff;z-index:9;}
+.wordkplan .subBox:hover{border:1px solid #333;color:#000;}
+.wordkplan .arrow1{position:absolute;background:url("../../images/ico_warrow1.png") no-repeat center right;width:40px;height:16px;}
+.wordkplan .arrow2{position:absolute;background:url("../../images/ico_warrow2.png") no-repeat center right;width:16px;height:25px;}
+.wordkplan .arrow3{position:absolute;background:url("../../images/ico_warrow3.png") no-repeat center right;width:40px;height:16px;}
+.wordkplan .arrow4{position:absolute;background:url("../../images/ico_warrow4.png") no-repeat center right;width:56px;height:61px;}
+.wordkplan .arrow5{position:absolute;background:url("../../images/ico_warrow5.png") no-repeat center right;width:56px;height:68px;}
+.wordkplan .arrow6{position:absolute;background:url("../../images/ico_warrow6.png") no-repeat center right;width:63px;height:191px;}
+.wordkplan .arrow7{position:absolute;background:url("../../images/ico_warrow7.png") no-repeat center right;width:56px;height:21px;}
+.wordkplan .arrow8{position:absolute;background:url("../../images/ico_warrow8.png") no-repeat center right;width:268px;height:56px;}
+.wordkplan .arrow9{position:absolute;background:url("../../images/ico_warrow9.png") no-repeat center right;width:185px;height:16px;}
+.wordkplan span{position:absolute;left:-1000%;top:0;width:1px;height:1px;font-size:0;line-height:0;overflow:hidden;z-index:1;}
+
+/* 워크플랜 - 깜박임 */
+.wordkplan .box.on{background:#009666;border:0;color:#fff;}
+.wordkplan .subBox.on{background:#009666;border:0;color:#fff;}
+
+/* 워크플랜 - 위치 */
+.b1{top:48px;left:85px;}/* 영업/수주 */
+.b2{top:48px;left:375px;}/* 설계 */
+.b3{top:48px;left:665px;}/* CAM */
+.b4{top:228px;left:665px;}/* NCT */
+.b5{top:228px;left:375px;}/* 절곡 */
+.b6{top:228px;left:85px;}/* 도장 */
+.b7{top:408px;left:85px;}/* 조립 */
+.b8{top:408px;left:375px;}/* 창고 */
+.b9{top:408px;left:665px;}/* 출고 */
+.b10{top:318px;left:665px;}/* 제관/용접 */
+
+.s1{top:48px;left:275px;}/* 창고박스 */
+.s2{top:48px;left:565px;}
+.s3{top:143px;left:710px;}
+.s4{top:233px;left:565px;}
+.s5{top:233px;left:275px;}
+.s6{top:323px;left:0px;}
+.s7{top:413px;left:275px;}
+.s8{top:413px;left:565px;}
+.s9{top:273px;left:840px;}
+.s10{top:323px;left:420px;}
+
+.a1{top:75px;left:235px;}/* → */
+.a2{top:75px;left:335px;}/* → */
+.a3{top:75px;left:525px;}/* → */
+.a4{top:75px;left:625px;}/* → */
+.a5{top:118px;left:732px;}/* ↓ */
+.a6{top:203px;left:732px;}/* ↓ */
+.a7{top:255px;left:626px;}/* ← */
+.a8{top:255px;left:528px;}/* ← */
+.a9{top:255px;left:336px;}/* ← */
+.a10{top:255px;left:238px;}/* ← */
+.a11{top:262px;left:29px;}/* ┌ */
+.a12{top:383px;left:29px;}/* └ */
+.a13{top:435px;left:235px;}/* → */
+.a14{top:435px;left:335px;}/* → */
+.a15{top:435px;left:525px;}/* → */
+.a16{top:435px;left:625px;}/* → */
+.a17{top:82px;left:815px;}/* ┐ */
+.a18{top:333px;left:815px;}/* ┘ */
+.a19{top:345px;left:480px;}/* ←-- */
+.a20{top:300px;left:153px;}/* └ */
+
+/******************************************** 게시판 모음 ********************************************/
+/* 기본 */
+.tbl{width:100%;}
+.tbl thead th{border-bottom:1px solid #e3e3e3;color:#333;}
+.tbl tbody td{border-bottom:1px solid #e3e3e3;}
+.tbl .left{text-align:left;padding-left:20px;}
+.tbl img{vertical-align:middle;}
+.tbl .bgYellow{background:#fffcf0;color:#e6410e;}
+.tbl .bgBlue{background:#fffcf0;color:#0054FF;}
+
+/* 테이블 */
+.type1 thead th{border-top:2px solid #333;padding:10px 5px;background:#f9f9f9;}
+.type1 tbody td{text-align:center;padding:8px 5px;}
+.type1 tr:hover{background:#fbfbfb;}
+
+/* 테이블2 */
+.type2 thead th{border-top:1px solid #333;border-bottom:1px solid #333;border-left:1px solid #e3e3e3;padding:6px 3px;background:#fff;}
+.type2 tbody td{text-align:center;padding:6px 3px;border-left:1px solid #e3e3e3;}
+.type2 thead th:first-child, .type2 tbody td:first-child{border-left:0;}
+.type2 tr:hover{background:#fbfbfb;}
+
+/* 글쓰기 */
+.type3 tbody{border-top:2px solid #333;}
+.type3 tbody th{padding:10px 3px;background:#f9f9f9;border-bottom:1px solid #e3e3e3;}
+.type3 tbody td{padding:2px 2px;}
+
+/* 글쓰기2 */
+.type4 tbody tr{border-top:1px solid #333;}
+.type4 tbody th{padding:10px 3px;background:#f9f9f9;border-bottom:1px solid #e3e3e3;}
+.type4 tbody td{padding:2px 2px;}
+
+/* 상세화면 */
+.viewArea{}
+.viewArea .viewHead{border-top:2px solid #222;border-bottom:1px solid #e3e3e3;padding:20px 20px;}
+.viewArea .viewHead h3{font-size:20px;font-weight:bold;color:#333;}
+.viewArea .viewHead h3 span{color:#009666;}
+.viewArea .viewHead p{margin-top:8px;}
+.viewArea .viewHead p span{color:#344fa0;padding-left:10px;font-size:12px;}
+.viewArea .viewHead p span:first-child{padding:0;}
+.viewArea .viewCon{min-height:230px;padding:20px 20px;border-bottom:1px solid #e3e3e3;}
+
+/* 댓글 */
+.comment{}
+.comment ul{}
+.comment ul li{border-top:1px solid #ddd;padding:17px 10px;}
+.comment ul li .commTit{font-weight:bold;color:#333;}
+.comment ul li .commTit span{display:inline-block;font-weight:normal;font-size:11px;color:#999;margin:0 10px;}
+.comment ul li .commTxt{color:#888;margin-top:2px;}
+.comment ul li .re{overflow:hidden;}
+.comment ul li .re img{float:left;margin:2px 10px 0 20px;}
+.comment .commWrite{overflow:hidden;background:#f9f9f9;border:1px solid #e3e3e3;}
+.comment .commWrite dt{float:left;width:20%;line-height:70px;text-align:center;border-right:1px solid #e3e3e3;box-sizing:border-box;}
+.comment .commWrite dd{float:left;width:60%;}
+.comment .commWrite dd textarea{width:100%;height:70px;background:none;border:0;}
+.comment .commWrite dd + dd{width:20%;}
+.comment .commWrite dd + dd a{display:block;line-height:70px;background:#009666;text-align:center;color:#fff;}
+.comment .commWrite dd + dd a:hover{background:#003625;}
+
+/* 체크리스트 날짜 */
+.checkDay{position:relative;width:30%;text-align:center;margin:-45px auto 20px auto;}
+.checkDay p{font-size:24px;color:#222;font-weight:bold;}
+.checkDay img{vertical-align:middle;margin:0 0 3px 5px;}
+.checkDay .pre{position:absolute;top:7px;left:0;}
+.checkDay .next{position:absolute;top:7px;right:0;}
+
+/* 일정 */
+.calendarArea{}
+.calendarArea .calendarDay{position:relative;width:25%;text-align:center;margin:-40px auto 12px auto;}
+.calendarArea .calendarDay p{font-size:24px;color:#222;font-weight:bold;padding-right:80px;}
+.calendarArea .calendarDay .pre{position:absolute;top:7px;left:0;}
+.calendarArea .calendarDay .next{position:absolute;top:7px;right:80px;}
+.calendarArea .calendarDay a.htoday{position:absolute;top:7px;right:0;display:inline-block;padding:6px 20px;border:1px solid #009666;}
+.calendarArea .calendarDay a.htoday:hover{background:#009666;color:#fff;}
+.calendarArea table{width:100%;}
+.calendarArea table thead th{border-top:2px solid #333;border-bottom:1px solid #e3e3e3;padding:9px 5px;background:#f9f9f9;}
+.calendarArea table tbody td{height:80px;padding:10px;border-left:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;vertical-align:top;font-size:12px;line-height:16px;}
+.calendarArea table tbody td:first-child{border-left:0;}
+.calendarArea .sun{color:#e6410e;}/* 일요일 */
+.calendarArea .satur{color:#2c4cae;}/* 토요일 */
+.calendarArea .today{background:#e5f4ef;color:#009666;font-weight:bold;}/* 오늘날짜 */
+.calendarArea .on1{background:#009666;color:#fff;}/* 초록일정 */
+.calendarArea .on2{background:#e6410e;color:#fff;}/* 붉은일정 */
+.calendarArea .on3{background:#344fa0;color:#fff;}/* 파랑일정 */
+.calendarArea .on4{background:#eff2fd;}/* 파랑바탕일정 */
+.calendarArea .on5{background:#f7edcb;}/* 노랑바탕일정 */
+.calendarArea .on6{background:#e2f6e2;}/* 초록바탕일정 */
+
+/* 프로젝트 목록 */
+.projectArea{margin-top:20px;}
+.projectArea .btnArea{margin-top:0;}
+.projectArea .projectList{float:left;width:72%;}
+.projectArea .projectList .tblList{overflow-x:hidden;height:560px;}
+.projectArea .projectCate{float:left;width:28%;box-sizing:border-box;padding-left:30px;}
+.projectArea .projectCate .cateList{border-top:2px solid #333;padding-top:5px;overflow-x:hidden;height:560px;}
+.projectArea .projectCate .cateList dt{padding:5px 0;color:#344fa0;font-weight:bold;}
+.projectArea .projectCate .cateList dd ul li{padding:1px 0 1px 20px;}
+
+.cateList2{border:1px solid #ccc;overflow-x:hidden;height:250px;}
+.cateList2 dt{padding:5px 20px;color:#344fa0;font-weight:bold;}
+.cateList2 dd ul li{padding:1px 20px 1px 40px;}
