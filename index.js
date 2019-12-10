@@ -109,56 +109,28 @@ app.get("/404", function(req, res){
 //회원가입 API
 app.post('/signup', function(req, res) {
   var id = req.body.inputID;
-  var pw = req.body.InputPW;
-  var email = req.body.InputEmail;
+  var pw = req.body.inputPW;
+  var email = req.body.inputEmail;
   var name = req.body.inputName;
   var phone = req.body.inputMobile;
 
-  // 빈칸 체크
-  if (!id) {
-    res.render("signup", {status: "id"});
-  } else if (!pw) {
-    res.render("signup", {status: "pw"});
-  } else if (!email) {
-    res.render("signup", {status: "email"});
-  } else if (!name) {
-    res.render("signup", {status: "name"});
-  } else if (!phone) {
-    res.render("signup", {status: "phone"});
-  } else {
-    var checkPW = true;
-    var check1 = /^(?=.*[a-zA-Z])(?=.*[0-9]).{10,12}$/.test(pw);   //영문,숫자
-    var check2 = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{10,12}$/.test(pw);  //영문,특수문자
-    var check3 = /^(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{10,12}$/.test(pw);  //특수문자, 숫자
-
-    if(!(check1||check2||check3)){
-      // res.render("signup", {status: "pw"});
-      // * 10자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다.
-      console.debug("pw check1");
-      res.render("signup", {status: "pw2"});
-      checkPW = false;
-    }
-
-    if (checkPW) {
-        var users = {
-          "ID": id,
-          "PW": pw,
-          "EMAIL": email,
-          "NAME": name,
-          "PHONENUMBER": phone
-        }
-        
-       conn.query('INSERT INTO  nodedb.T_RECIPE_MEMBER  SET ?' , users, function (error, results, fields) {
-          if (error) {
-              console.log("error ocurred", error);
-              res.redirect('/404');
-          } else {
-              console.log('The solution is: ', results);
-              res.redirect('/');
-          }
-        });
-    }
+  var users = {
+    "ID": id,
+    "PW": pw,
+    "EMAIL": email,
+    "NAME": name,
+    "PHONENUMBER": phone
   }
+  
+  conn.query('INSERT INTO  nodedb.T_RECIPE_MEMBER  SET ?' , users, function (error, results, fields) {
+    if (error) {
+        console.log("error ocurred", error);
+        res.redirect('/404');
+    } else {
+        console.log('The solution is: ', results);
+        res.redirect('/');
+    }
+  });
 });
 
 app.listen(3000, function () {
