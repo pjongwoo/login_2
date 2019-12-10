@@ -12,7 +12,10 @@
     <link rel="stylesheet" type="text/css" href="/css/layout.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/contents.css">
-
+    <!-- 부트스트랩 추가 :홍준 -->   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <style type="text/css">
 
@@ -52,116 +55,104 @@
 <body>
 <div id="wrap">
     <div id="header" class="hBlue"><!-- header 시작-->
-        <div class="innerH">
-            <!-- 상단 - 유틸 -->
-            <div class="util">
-                <ul>
-                    <li>
-
-                    </li>
-                    <li><a href="#"><img src="/images/ico_logout.png" alt="로그아웃"></a></li>
-                    <!--	<li><a href="#"><img src="/images/ico_setting.png" alt="설정" /></a></li> -->
-                </ul>
+            <div class="innerH">
+                 <!-- 상단 - 유틸 -->
+                 <p style="display: inline-block;
+                 color:#f8f9fa;
+                 padding: 1% 0 1% 1.5%;"> 혼달</p>
+                 <div class="util" style="z-index: 99999;">
+                         <ul>
+                             <li>
+                                 <img style="display: block;
+                                 margin: 0px;
+                                 width: 45px;
+                                 " src="/image/ico_logout.png" alt="로그아웃">
+                                 <a style="font-weight: bold;
+                                 color:#f8f9fa;
+                                 text-decoration: none;" href="/logout">로그아웃</a>
+                             </li>
+                         </ul>
+                 </div>
             </div>
-            <!-- //상단 - 유틸 -->
-
-
-
-            <div class="regular slider">
-                <div>
-                    <img src="/image/1.jpg">
-                </div>
-                <div>
-                    <img src="/image/2.jpg">
-                </div>
-                <div>
-                    <img src="/image/3.jpg">
-                </div>
-                <div>
-                    <img src="/image/4.jpg">
-                </div>
-                <div>
-                    <img src="/image/5.jpg">
-                </div>
-                <div>
-                    <img src="/image/6.jpg">
-                </div>
-                <div>
-                    <img src="/image/7.jpg">
-                </div>
-                <div>
-                    <img src="/image/8.jpg">
-                </div>
-                <div>
-                    <img src="/image/9.jpg">
-                </div>
-
-            </div>
-
-            <div class="gnbNavi">
-                <ul class="gnb">
-                    <li><h2 class="hn1"><a href="#">레시피</a></h2></li>
-                    <li><h2 class="hn2"><a href="#">레시피 승인</a></h2></li>
-
-                </ul>
-            </div>
-        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="/slick-1.8.1/slick/slick.js" type="text/javascript" charset="utf-8"></script>
-    <link ref="stylesheet" href="/stylesheets/style.css"/>
-    <script type="text/javascript" src="/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        $(document).on('ready', function() {
-            $(".regular").slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
-
-            $('.regular').slick('slickPlay');
-
-        });
-    </script>
     <!-- header 종료-->
 
     <div id ='container'><!-- body 시작-->
-        <div class='content' >
-            <h1><%= title %></h1>
+        <div style="
+        max-width: 960px;
+        margin: 0 auto;
+        /* padding: 10%; */
+        /* padding-top: 75px; */
+        top: 100px;
+        position: relative;
+    " >
+            <h1 style="text-align: center;
+            font-weight: bold;margin-bottom: 30px;"><%= title %></h1>
 
             <form action="/mongo/update" method="post">
                 <input type="hidden" name="id" value="<%= row._id %>">
-                <table border="1" style="width:100%;">
+                <table class="table table-bordered">
                     <tr>
-                        <td>작성자</td>
-                        <td><%=row.name%></td>
+                        <td scope="col" style="text-align: center;
+                        font-weight: normal;
+                        font-family: 'Nanum Barun Gothic';
+                        background: #fbfbfb;
+                        color: #222;border-right: dashed 1px #e5e5e5;padding: 2%;">작성자</td>
+                        <td style="padding: 2%;"><%=row.name%></td>
                     </tr>
                     <tr>
-                        <td>제목</td>
-                        <td><input type="text" name="title" id="title" value="<%= row.title %>" required/></td>
+                        <td scope="col" style="text-align: center;
+                        font-weight: normal;
+                        font-family: 'Nanum Barun Gothic';
+                        background: #fbfbfb;
+                        color: #222;border-right: dashed 1px #e5e5e5;padding: 2%;">제목</td>
+                        <td style="padding: 2%;"><input type="text" name="title" id="title" value="<%= row.title %>" required/></td>
                     </tr>
                     <tr>
-                        <td>내용</td>
-                        <td><textarea name="content" id="content" cols="30" rows="10" style="width:766px; height:412px; display:none;" required><%= row.content %></textarea></td>
+                        <td scope="col" style="text-align: center;
+                        font-weight: normal;
+                        font-family: 'Nanum Barun Gothic';
+                        background: #fbfbfb;
+                        color: #222;border-right: dashed 1px #e5e5e5;padding:2%;">내용</td>
+                        <td style="padding: 2%;"><textarea name="content" id="content" cols="30" rows="10" style="width:766px; height:412px; display:none;" required><%= row.content %></textarea></td>
                     </tr>
                     <tr>
-                        <td>변경일</td>
-                        <td><%= row.modidate %></td>
+                        <td scope="col" style="text-align: center;
+                        font-weight: normal;
+                        font-family: 'Nanum Barun Gothic';
+                        background: #fbfbfb;
+                        color: #222;border-right: dashed 1px #e5e5e5;padding:2%;">변경일</td>
+                        <td style="padding: 2%;"><%= row.modidate %></td>
                     </tr>
                     <tr>
-                        <td>등록일</td>
-                        <td><%= row.regdate %></td>
+                        <td scope="col" style="text-align: center;
+                        font-weight: normal;
+                        font-family: 'Nanum Barun Gothic';
+                        background: #fbfbfb;
+                        color: #222;border-right: dashed 1px #e5e5e5;padding: 2%;">등록일</td>
+                        <td style="padding:2%;"><%= row.regdate %></td>
                     </tr>
                     <tr>
-                        <td>조회수</td>
-                        <td><%= row.hit %></td>
+                        <td scope="col" style="text-align: center;
+                        font-weight: normal;
+                        font-family: 'Nanum Barun Gothic';
+                        background: #fbfbfb;
+                        color: #222;border-right: dashed 1px #e5e5e5;padding: 2%;">조회수</td>
+                        <td style="padding: 2%;"><%= row.hit %></td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button type="submit">글 수정</button>
-                            <button type="submit" formaction="/mongo/delete">글 삭제</button>
-                            <a href="/mongo/page">목록</a>
+                           <div style="
+                                display: flex;
+                                flex: 1;
+                                justify-content: center;
+                                "> 
+
+                            <button type="submit" class="btn btn-dark" style=" margin-right: 10px;color:#f8f9fa"> <b> 글 수정 </b></button>
+                            <button type="submit" formaction="/mongo/delete" class="btn btn-danger" style=" margin-right: 10px;"> <b>글 삭제 </b></button>
+                            <button type="button" class="btn btn-warning"><a style="font-weight: bold;color:#f8f9fa;text-decoration: none;"href="/mongo/page">목록</a></button>
+                         
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -206,14 +197,18 @@
                 }
 
             </script>
+            <div style="text-align: center;padding-top: 5%;">
+                <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+            </div>
         </div>
+      
     </div><!-- body 종료-->
 
 </div>
 <!-- Footer -->
-<footer id="footer">
+<!-- <div >
     <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-</footer>
+</div> -->
 <!-- Footer -->
 </body>
 </html>
